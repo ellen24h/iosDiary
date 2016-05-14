@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6FA2E8981CE713760007398C /* YSDiaryEntry+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2E8951CE713760007398C /* YSDiaryEntry+CoreDataProperties.m */; };
-		6FA2E8991CE713760007398C /* YSDiaryEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2E8971CE713760007398C /* YSDiaryEntry.m */; };
+		6FA2E8A41CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2E8A11CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m */; };
+		6FA2E8A51CE71B4B0007398C /* YSDiaryEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2E8A31CE71B4B0007398C /* YSDiaryEntry.m */; };
 		6FFE448A1CE5A13200B61141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFE44891CE5A13200B61141 /* main.m */; };
 		6FFE448D1CE5A13200B61141 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFE448C1CE5A13200B61141 /* AppDelegate.m */; };
 		6FFE44901CE5A13200B61141 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFE448F1CE5A13200B61141 /* ViewController.m */; };
@@ -22,10 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6FA2E8941CE713760007398C /* YSDiaryEntry+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YSDiaryEntry+CoreDataProperties.h"; sourceTree = "<group>"; };
-		6FA2E8951CE713760007398C /* YSDiaryEntry+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YSDiaryEntry+CoreDataProperties.m"; sourceTree = "<group>"; };
-		6FA2E8961CE713760007398C /* YSDiaryEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDiaryEntry.h; sourceTree = "<group>"; };
-		6FA2E8971CE713760007398C /* YSDiaryEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDiaryEntry.m; sourceTree = "<group>"; };
+		6FA2E8A01CE71B4A0007398C /* YSDiaryEntry+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YSDiaryEntry+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6FA2E8A11CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YSDiaryEntry+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6FA2E8A21CE71B4B0007398C /* YSDiaryEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDiaryEntry.h; sourceTree = "<group>"; };
+		6FA2E8A31CE71B4B0007398C /* YSDiaryEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDiaryEntry.m; sourceTree = "<group>"; };
 		6FFE44851CE5A13200B61141 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FFE44891CE5A13200B61141 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6FFE448B1CE5A13200B61141 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,10 +59,10 @@
 		6FFE447C1CE5A13200B61141 = {
 			isa = PBXGroup;
 			children = (
-				6FA2E8941CE713760007398C /* YSDiaryEntry+CoreDataProperties.h */,
-				6FA2E8951CE713760007398C /* YSDiaryEntry+CoreDataProperties.m */,
-				6FA2E8961CE713760007398C /* YSDiaryEntry.h */,
-				6FA2E8971CE713760007398C /* YSDiaryEntry.m */,
+				6FA2E8A01CE71B4A0007398C /* YSDiaryEntry+CoreDataProperties.h */,
+				6FA2E8A11CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m */,
+				6FA2E8A21CE71B4B0007398C /* YSDiaryEntry.h */,
+				6FA2E8A31CE71B4B0007398C /* YSDiaryEntry.m */,
 				6FFE44871CE5A13200B61141 /* Diary */,
 				6FFE44861CE5A13200B61141 /* Products */,
 			);
@@ -178,9 +178,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FFE44901CE5A13200B61141 /* ViewController.m in Sources */,
-				6FA2E8991CE713760007398C /* YSDiaryEntry.m in Sources */,
+				6FA2E8A51CE71B4B0007398C /* YSDiaryEntry.m in Sources */,
 				6FFE448D1CE5A13200B61141 /* AppDelegate.m in Sources */,
-				6FA2E8981CE713760007398C /* YSDiaryEntry+CoreDataProperties.m in Sources */,
+				6FA2E8A41CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m in Sources */,
 				6FFE448A1CE5A13200B61141 /* main.m in Sources */,
 				6FFE44BB1CE5C06400B61141 /* YSNewEntryViewController.m in Sources */,
 				6FFE44D21CE5E48200B61141 /* YSEntryListViewController.m in Sources */,
