@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YSCoreDataStack.h"
-#import "YSDiaryEntry.h"
 
-@interface YSNewEntryViewController : UIViewController
+@class YSDiaryEntry;
+
+@interface YSEntryViewController : UIViewController
+
+@property(nonatomic, strong) YSDiaryEntry *entry;
 
 @end

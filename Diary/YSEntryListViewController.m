@@ -9,6 +9,8 @@
 #import "YSEntryListViewController.h"
 #import "YSCoreDataStack.h"
 #import "YSDiaryEntry.h"
+#import "YSEntryViewController.h"
+#import "YSTableViewCell.h"
 
 @interface YSEntryListViewController () <NSFetchedResultsControllerDelegate>
 
@@ -37,6 +39,26 @@
 }
 
 
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if([segue.identifier isEqualToString:@"Edit"]){
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        UINavigationController *navigationController =segue.destinationViewController;
+        YSEntryViewController *entryViewController = (YSEntryViewController *)navigationController.topViewController;
+        entryViewController.entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        
+    }
+}
+
+
 
 #pragma mark - Table view data source
 
@@ -58,14 +80,34 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    YSTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath]; //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     YSDiaryEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = entry.body;
-    
+ 
+    [cell configureCellForEntry:entry]; //cell.textLabel.text = entry.body;
     return cell;
 }
 
+
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    YSDiaryEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    return [YSTableViewCell heightForEntry:entry];
+
+}
+
+
+//Delete table cell
+- (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    return UITableViewCellEditingStyleDelete;
+
+}
+
+
+
+//Header
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
@@ -82,12 +124,24 @@
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    
+    
+    
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        // Delete the row from the data source
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//    }
+    
+        
+    YSDiaryEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+    YSCoreDataStack *coreDataStack =[YSCoreDataStack defaultStack];
+    [[coreDataStack managedObjectContext] deleteObject:entry];
+    [coreDataStack saveContext];
+//
+    
 }
 
 // Override to support rearranging the table view.
@@ -118,7 +172,6 @@
     YSCoreDataStack *coreDataStack = [YSCoreDataStack defaultStack];
     NSFetchRequest *fetchRequest = [self entryListFetchRequest];
     
-    
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:@"sectionName" cacheName:nil];
     
     _fetchedResultsController.delegate = self;
@@ -126,20 +179,47 @@
     return _fetchedResultsController;
 }
 
+-(void)controllerWillChangeContent:(NSFetchedResultsController *)controller{
+    
+    [self.tableView beginUpdates];
+}
 
--(void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
+-(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath{
+   
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+               
+        case NSFetchedResultsChangeUpdate:
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+    }
+}
 
-    [self.tableView reloadData];
-
+// Last row delete -> 전체 section delete & row insert -> section insertion
+-(void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type{
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
+
+//    [self.tableView reloadData]; //아래 코드로 대체
+    [self.tableView endUpdates];
+
 }
 
 

@@ -6,20 +6,25 @@
 //  Copyright © 2016년 yunseo. All rights reserved.
 //
 
-#import "YSNewEntryViewController.h"
-//#import "YSCoreDataStack.h"
-//#import "YSDiaryYSDiaryEntry.h"
+#import "YSEntryViewController.h"
+#import "YSCoreDataStack.h"
+#import "YSDiaryEntry.h"
 
-@interface YSNewEntryViewController ()
+@interface YSEntryViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
-@implementation YSNewEntryViewController
+@implementation YSEntryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
+    
+    if(self.entry != nil){
+        self.textField.text = self.entry.body;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,9 +50,24 @@
     
 }
 
+- (void)updateDairyEntry {
+    
+    self.entry.body = self.textField.text;
+    
+    YSCoreDataStack *coreDataStack =[YSCoreDataStack defaultStack];
+    [coreDataStack saveContext];
 
+}
+    
+    
 - (IBAction)DonePressed:(id)sender {
-    [self insertDiaryEntry];
+    
+    if (self.entry != nil) {
+        [self updateDairyEntry];
+    }else {
+        [self insertDiaryEntry];
+    }
+    
     [self dismissSelf];
 
 

@@ -20,6 +20,7 @@
 @dynamic mood;
 
 
+
 - (NSString *)sectionName {
     
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.date];
@@ -27,8 +28,8 @@
     [dateFormatter setDateFormat:@"MMM YYYY"];
 
     return [dateFormatter stringFromDate:date];
-    NSLog(@"dateFormatter %@", dateFormatter);
-    NSLog(@"date %@", date);
+//    NSLog(@"dateFormatter %@", dateFormatter);
+//    NSLog(@"date %@", date);
 
 
 }
