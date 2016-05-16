@@ -14,11 +14,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="7yR-tp-VEE">
-                                <rect key="frame" x="20" y="87" width="335" height="30"/>
+                                <rect key="frame" x="20" y="143" width="335" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rzc-h8-OtA">
+                                <rect key="frame" x="33" y="85" width="322" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -35,12 +42,60 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="accessoryView" destination="iom-SK-6N0" id="glg-Mb-YoV"/>
+                        <outlet property="averageButton" destination="x8l-9Z-Xbv" id="blS-yS-GED"/>
+                        <outlet property="badButton" destination="IVN-tR-sjE" id="wrG-ig-nZm"/>
+                        <outlet property="dateLabel" destination="rzc-h8-OtA" id="Mds-mk-VKU"/>
+                        <outlet property="goodButton" destination="Gca-TY-dbm" id="zLz-c6-YuB"/>
                         <outlet property="textField" destination="7yR-tp-VEE" id="Zuh-FH-2rM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="iom-SK-6N0">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IVN-tR-sjE">
+                            <rect key="frame" x="250" y="8" width="125" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Bad" image="icn_bad_lrg.png">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="badButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gR-vc-oXl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x8l-9Z-Xbv">
+                            <rect key="frame" x="125" y="8" width="125" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.93333333333333335" green="0.24705882352941178" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="-13" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Average" image="icn_average_lrg.png">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="averageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n7q-XI-Jdc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Gca-TY-dbm">
+                            <rect key="frame" x="0.0" y="8" width="126" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Good" image="icn_good_lrg.png">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="goodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="87U-Ge-Cza"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="15.733333333333333" y="-351.68666666666667"/>
+            <point key="canvasLocation" x="181.5" y="-352.5"/>
         </scene>
         <!--Diary-->
         <scene sceneID="YMd-i0-ZIZ">
@@ -155,6 +210,11 @@
             <point key="canvasLocation" x="-219.46666666666667" y="-351.68666666666667"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icn_average_lrg.png" width="15" height="15"/>
+        <image name="icn_bad_lrg.png" width="15" height="15"/>
+        <image name="icn_good_lrg.png" width="15" height="15"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TUo-bz-8jv"/>
     </inferredMetricsTieBreakers>

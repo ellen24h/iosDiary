@@ -43,7 +43,7 @@
     self.locationLabel.text = entry.location;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"EEEE, MMMMM d yyyy" ];
+    [dateFormatter setDateFormat:@"MMM d (EE)" ];
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:entry.date];
     
     self.dateLabel.text = [dateFormatter stringFromDate:date];
@@ -54,16 +54,16 @@
         self.mainImgView.image = [UIImage imageNamed:@"icon_noImage"];
     }
     
-//    
-//    if(entry.mood == YSDiaryEntryMoodGood){
-//        self.mainImgView.image = [UIImage imageWithData:@"icon_good"];
-//        
-//    }else if(entry.mood == YSDiaryEntryMoodAverage){
-//        self.mainImgView.image = [UIImage imageWithData:@"icon_Average"];
-//        
-//    }else if(entry.mood == YSDiaryEntryMoodBad){
-//        self.mainImgView.image = [UIImage imageWithData:@"icon_bad"];
-//    }
+    
+    if(entry.mood == YSDiaryEntryMoodGood){
+        self.moodImgView.image = [UIImage imageNamed:@"icn_happy"];
+        
+    }else if(entry.mood == YSDiaryEntryMoodAverage){
+        self.moodImgView.image = [UIImage imageNamed:@"icn_Average"];
+        
+    }else if(entry.mood == YSDiaryEntryMoodBad){
+        self.moodImgView.image = [UIImage imageNamed:@"icn_bad"];
+    }
 }
 
 //- (void)awakeFromNib {

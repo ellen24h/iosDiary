@@ -11,7 +11,15 @@
 #import "YSDiaryEntry.h"
 
 @interface YSEntryViewController ()
+
 @property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (nonatomic, assign) enum YSDiaryEntryMood pickedMood;
+
+@property (weak, nonatomic) IBOutlet UIButton *goodButton;
+@property (weak, nonatomic) IBOutlet UIButton *averageButton;
+@property (weak, nonatomic) IBOutlet UIButton *badButton;
+@property (strong, nonatomic) IBOutlet UIView *accessoryView;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end
 
@@ -20,11 +28,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
+    NSDate *date;
     
     if(self.entry != nil){
         self.textField.text = self.entry.body;
+        self.pickedMood = self.entry.mood;
+        date = [NSDate dateWithTimeIntervalSince1970:self.entry.date];
+        
+    }else{
+        self.pickedMood  = YSDiaryEntryMoodGood;
+        date = [NSDate date];
     }
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"MMM d (EEEE) "];
+    self.dateLabel.text = [dateFormatter stringFromDate:date];
+    
+    self.textField.inputAccessoryView = self.accessoryView; //up of the keybord
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +79,29 @@
 
 }
     
-    
+-(void)setPickedMood:(enum YSDiaryEntryMood)pickedMood {
+    _pickedMood = pickedMood;
+    self.goodButton.alpha = 0.5f;
+    self.averageButton.alpha = 0.5f;
+    self.badButton.alpha = 0.5f;
+
+    switch (pickedMood) {
+        case YSDiaryEntryMoodGood:
+            self.goodButton.alpha = 1.0f;
+            break;
+        case YSDiaryEntryMoodAverage:
+            self.averageButton.alpha = 1.0f;
+            break;
+            
+        case YSDiaryEntryMoodBad:
+            self.badButton.alpha = 1.0f;
+            break;
+    }
+
+}
+
+
+
 - (IBAction)DonePressed:(id)sender {
     
     if (self.entry != nil) {
@@ -77,6 +119,20 @@
     
     
 }
+
+
+- (IBAction)goodButton:(id)sender {
+    self.pickedMood = YSDiaryEntryMoodGood;
+}
+
+- (IBAction)averageButton:(id)sender {
+    self.pickedMood = YSDiaryEntryMoodAverage;
+}
+
+- (IBAction)badButton:(id)sender {
+    self.pickedMood = YSDiaryEntryMoodBad;
+}
+
 
 /*
 #pragma mark - Navigation
