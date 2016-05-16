@@ -13,19 +13,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="7yR-tp-VEE">
-                                <rect key="frame" x="20" y="143" width="335" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rzc-h8-OtA">
-                                <rect key="frame" x="33" y="85" width="322" height="32"/>
+                                <rect key="frame" x="43" y="76" width="234" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OPT-DN-72L">
+                                <rect key="frame" x="102" y="121" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon_noImage"/>
+                                <connections>
+                                    <action selector="imgButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fb-ai-rbE"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="y2h-TS-RfC">
+                                <rect key="frame" x="65" y="305" width="255" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -47,7 +56,8 @@
                         <outlet property="badButton" destination="IVN-tR-sjE" id="wrG-ig-nZm"/>
                         <outlet property="dateLabel" destination="rzc-h8-OtA" id="Mds-mk-VKU"/>
                         <outlet property="goodButton" destination="Gca-TY-dbm" id="zLz-c6-YuB"/>
-                        <outlet property="textField" destination="7yR-tp-VEE" id="Zuh-FH-2rM"/>
+                        <outlet property="imgButton" destination="OPT-DN-72L" id="OZ7-RL-KTt"/>
+                        <outlet property="textView" destination="y2h-TS-RfC" id="Ddw-xP-Zj4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -127,12 +137,12 @@
                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6oV-Eo-TO2">
-                                            <rect key="frame" x="19" y="8" width="108" height="108"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6oV-Eo-TO2">
+                                            <rect key="frame" x="8" y="8" width="119" height="119"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gIi-95-XWd">
-                                            <rect key="frame" x="83" y="94" width="44" height="39"/>
+                                            <rect key="frame" x="88" y="94" width="39" height="39"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JFH-g7-0D0">
@@ -214,6 +224,7 @@
         <image name="icn_average_lrg.png" width="15" height="15"/>
         <image name="icn_bad_lrg.png" width="15" height="15"/>
         <image name="icn_good_lrg.png" width="15" height="15"/>
+        <image name="icon_noImage" width="47" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TUo-bz-8jv"/>

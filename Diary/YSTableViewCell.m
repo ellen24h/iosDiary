@@ -8,6 +8,7 @@
 
 #import "YSTableViewCell.h"
 #import "YSDiaryEntry.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface YSTableViewCell ()
 
@@ -64,7 +65,20 @@
     }else if(entry.mood == YSDiaryEntryMoodBad){
         self.moodImgView.image = [UIImage imageNamed:@"icn_bad"];
     }
+    
+    self.mainImgView.layer.cornerRadius = CGRectGetWidth(self.mainImgView.frame) / 2.0f;
+    
+    if (entry.location.length > 0){
+        self.locationLabel.text = entry.location;
+        NSLog(@"entry.location : %@ ",entry.location);
+        
+    }else {
+        self.locationLabel.text = @"No location";
+        NSLog(@"No location");
+
+    }
 }
+
 
 //- (void)awakeFromNib {
 //    // Initialization code

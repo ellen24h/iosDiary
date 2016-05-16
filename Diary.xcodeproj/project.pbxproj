@@ -32,6 +32,8 @@
 		6F44F5F61CE99B660042D408 /* Icn_write.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5DD1CE99B660042D408 /* Icn_write.png */; };
 		6F44F5F71CE99B660042D408 /* icn_write_post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5DE1CE99B660042D408 /* icn_write_post@2x.png */; };
 		6F44F5F81CE99B660042D408 /* icon_noImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5DF1CE99B660042D408 /* icon_noImage@2x.png */; };
+		6F44F5FA1CE9CCFD0042D408 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F44F5F91CE9CCFD0042D408 /* QuartzCore.framework */; };
+		6F44F5FC1CE9D14F0042D408 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F44F5FB1CE9D14F0042D408 /* CoreLocation.framework */; };
 		6F5268B81CE8C43B00EE4705 /* YSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5268B71CE8C43B00EE4705 /* YSNavigationController.m */; };
 		6F5268BB1CE8CA5C00EE4705 /* YSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5268BA1CE8CA5C00EE4705 /* YSTableViewCell.m */; };
 		6FA2E8A41CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2E8A11CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m */; };
@@ -74,6 +76,8 @@
 		6F44F5DD1CE99B660042D408 /* Icn_write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icn_write.png; sourceTree = "<group>"; };
 		6F44F5DE1CE99B660042D408 /* icn_write_post@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_write_post@2x.png"; sourceTree = "<group>"; };
 		6F44F5DF1CE99B660042D408 /* icon_noImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_noImage@2x.png"; sourceTree = "<group>"; };
+		6F44F5F91CE9CCFD0042D408 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6F44F5FB1CE9D14F0042D408 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6F5268B61CE8C43B00EE4705 /* YSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSNavigationController.h; sourceTree = "<group>"; };
 		6F5268B71CE8C43B00EE4705 /* YSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSNavigationController.m; sourceTree = "<group>"; };
 		6F5268B91CE8CA5C00EE4705 /* YSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTableViewCell.h; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F44F5FC1CE9D14F0042D408 /* CoreLocation.framework in Frameworks */,
+				6F44F5FA1CE9CCFD0042D408 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +161,8 @@
 				6F44F5C61CE99B660042D408 /* Img */,
 				6FFE44871CE5A13200B61141 /* Diary */,
 				6FFE44861CE5A13200B61141 /* Products */,
+				6F44F5FB1CE9D14F0042D408 /* CoreLocation.framework */,
+				6F44F5F91CE9CCFD0042D408 /* QuartzCore.framework */,
 			);
 			sourceTree = "<group>";
 		};
