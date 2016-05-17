@@ -1,0 +1,10 @@
+PODS:
+  - Calendar-iOS (0.9)
+
+DEPENDENCIES:
+  - Calendar-iOS
+
+SPEC CHECKSUMS:
+  Calendar-iOS: 2296d7b4354a36ee1eefa012617b573270a206cb
+
+COCOAPODS: 0.39.0

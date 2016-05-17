@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="y40-hv-y12">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="y40-hv-y12">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Entry View Controller-->
@@ -171,6 +171,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Diary" id="Uu1-uk-CQo">
+                        <barButtonItem key="leftBarButtonItem" image="icn_calendar.png" id="QT0-9O-j1n">
+                            <connections>
+                                <segue destination="Ocr-ga-OW5" kind="push" id="ASW-WW-fEh"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nz5-j9-Mav">
                             <connections>
                                 <segue destination="j9Q-ee-FAp" kind="modal" id="Q0j-L6-btl"/>
@@ -182,6 +187,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTx-1D-sda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="77.5" y="394.5"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="VSm-4a-xqu">
+            <objects>
+                <viewController id="Ocr-ga-OW5" customClass="YSCalendarViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b54-sH-gK1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ail-PS-f4Y"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7CL-MG-3Ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-364.5" y="1098.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bgY-Iv-D1J">
@@ -217,16 +238,17 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9k-qV-qAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219.46666666666667" y="-351.68666666666667"/>
+            <point key="canvasLocation" x="-218.5" y="-352.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="icn_average_lrg.png" width="15" height="15"/>
         <image name="icn_bad_lrg.png" width="15" height="15"/>
+        <image name="icn_calendar.png" width="28" height="30"/>
         <image name="icn_good_lrg.png" width="15" height="15"/>
         <image name="icon_noImage" width="47" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TUo-bz-8jv"/>
+        <segue reference="Q0j-L6-btl"/>
     </inferredMetricsTieBreakers>
 </document>
