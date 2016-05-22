@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F14DE871CF1A7A60023B170 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F14DE861CF1A7A60023B170 /* sample.png */; };
+		6F14DE891CF1A9BE0023B170 /* sample2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F14DE881CF1A9BE0023B170 /* sample2.png */; };
 		6F22636A1CEB5BF200660B71 /* YSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2263691CEB5BF200660B71 /* YSCalendarViewController.m */; };
 		6F44F5E01CE99B660042D408 /* about_120-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5C71CE99B660042D408 /* about_120-1.png */; };
 		6F44F5E11CE99B660042D408 /* about_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5C81CE99B660042D408 /* about_120.png */; };
@@ -55,6 +57,8 @@
 /* Begin PBXFileReference section */
 		2822A903341E360C41AA8D0E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2B3C73251681DBEE6374D2DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F14DE861CF1A7A60023B170 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
+		6F14DE881CF1A9BE0023B170 /* sample2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample2.png; sourceTree = "<group>"; };
 		6F2263671CEB586100660B71 /* podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
 		6F2263681CEB5BF200660B71 /* YSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarViewController.h; sourceTree = "<group>"; };
 		6F2263691CEB5BF200660B71 /* YSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarViewController.m; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 		6F44F5C61CE99B660042D408 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				6F14DE861CF1A7A60023B170 /* sample.png */,
 				6F44F5C71CE99B660042D408 /* about_120-1.png */,
 				6F44F5C81CE99B660042D408 /* about_120.png */,
 				6F44F5C91CE99B660042D408 /* about_180.png */,
@@ -139,6 +144,7 @@
 				6F44F5CD1CE99B660042D408 /* icn_average.png */,
 				6F44F5CE1CE99B660042D408 /* icn_average@2x.png */,
 				6F44F5CF1CE99B660042D408 /* icn_average_lrg.png */,
+				6F14DE881CF1A9BE0023B170 /* sample2.png */,
 				6F44F5D01CE99B660042D408 /* icn_average_lrg@2x.png */,
 				6F44F5D11CE99B660042D408 /* icn_bad.png */,
 				6F44F5D21CE99B660042D408 /* icn_bad@2x.png */,
@@ -302,6 +308,7 @@
 			files = (
 				6F44F5F11CE99B660042D408 /* icn_good_lrg.png in Resources */,
 				6FFE449B1CE5A13200B61141 /* LaunchScreen.storyboard in Resources */,
+				6F14DE891CF1A9BE0023B170 /* sample2.png in Resources */,
 				6F44F5E41CE99B660042D408 /* about_80.png in Resources */,
 				6F44F5EA1CE99B660042D408 /* icn_bad.png in Resources */,
 				6F44F5F21CE99B660042D408 /* icn_good_lrg@2x.png in Resources */,
@@ -317,6 +324,7 @@
 				6F44F5ED1CE99B660042D408 /* icn_bad_lrg@2x.png in Resources */,
 				6F44F5E31CE99B660042D408 /* about_58.png in Resources */,
 				6F44F5E11CE99B660042D408 /* about_120.png in Resources */,
+				6F14DE871CF1A7A60023B170 /* sample.png in Resources */,
 				6F44F5E71CE99B660042D408 /* icn_average@2x.png in Resources */,
 				6F44F5E51CE99B660042D408 /* about_87.png in Resources */,
 				6F44F5EB1CE99B660042D408 /* icn_bad@2x.png in Resources */,

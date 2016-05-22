@@ -32,7 +32,7 @@
     UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     
     // options: | //
-    CGRect boundingBox = [entry.body boundingRectWithSize:CGSizeMake(218, 12) options:(NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:font} context:nil];
+    CGRect boundingBox = [entry.body boundingRectWithSize:CGSizeMake(349, 340) options:(NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:font} context:nil];
     
     return  MAX(minHeight, CGRectGetHeight(boundingBox) + topMargin +bottonMargin);
 
@@ -45,9 +45,22 @@
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"MMM d (EE)" ];
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:entry.date];
     
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:entry.date];
     self.dateLabel.text = [dateFormatter stringFromDate:date];
+    
+    
+    
+    
+    //test-time
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc]init];
+    [dateFormatter2 setDateFormat:@"hh:mm" ];
+    
+    NSDate *date2 = [NSDate dateWithTimeIntervalSince1970:entry.date];
+    [dateFormatter stringFromDate:date2];
+    
+    NSLog(@"date : %@", date2);
+    
     
     if(entry.imageData){
         self.mainImgView.image = [UIImage imageWithData:entry.imageData];
@@ -66,7 +79,7 @@
         self.moodImgView.image = [UIImage imageNamed:@"icn_bad"];
     }
     
-    self.mainImgView.layer.cornerRadius = CGRectGetWidth(self.mainImgView.frame) / 2.0f;
+//    self.mainImgView.layer.cornerRadius = CGRectGetWidth(self.mainImgView.frame) / 2.0f;
     
     if (entry.location.length > 0){
         self.locationLabel.text = entry.location;
@@ -78,6 +91,8 @@
 
     }
 }
+
+
 
 
 //- (void)awakeFromNib {

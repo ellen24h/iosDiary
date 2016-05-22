@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    CalendarView *calendarView = [[CalendarView alloc] initWithPosition:40.0 y:80.0];
+    CalendarView *calendarView = [[CalendarView alloc] initWithPosition:30.0 y:100.0];
     [self.view addSubview:calendarView];
     
     

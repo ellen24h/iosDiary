@@ -186,8 +186,23 @@ static const NSTimeInterval kCalendarViewSwipeMonthFadeOutTime = 0.6;
     self.fontSelectedColor = [UIColor whiteColor];
     self.selectionColor = [UIColor redColor];
     self.todayColor = [UIColor redColor];
-    self.bgColor = [UIColor whiteColor];
-    self.backgroundColor = [UIColor clearColor];
+    
+    
+//    self.bgColor = [UIColor whiteColor];
+//    self.bgColor = [UIColor lightGrayColor];
+//    self.bgColor = [UIColor clearColor];
+    self.bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sample2.png"]];
+
+//    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor lightGrayColor];
+
+//     self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"icon_noImage.png"]];
+//    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
+    [self setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"icon_noImage.png"]]];
+
+    
+    
+    
     
     self.shouldMarkSelectedDate = YES;
     self.shouldMarkToday = NO;

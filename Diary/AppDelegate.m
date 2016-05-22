@@ -19,6 +19,8 @@
     // Override point for customization after application launch.\\\
     
     [self setUpAppearance];
+    _window.backgroundColor = [UIColor whiteColor];
+//    self.backgroundColor = [UIColor clearColor];
     
     return YES;
 }
