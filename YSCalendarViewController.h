@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @class YSDiaryEntry;
-
 @interface YSCalendarViewController : UIViewController
 
 

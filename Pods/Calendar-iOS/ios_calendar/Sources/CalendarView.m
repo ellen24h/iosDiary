@@ -221,7 +221,11 @@ static const NSTimeInterval kCalendarViewSwipeMonthFadeOutTime = 0.2;
 //    self.bgColor = [UIColor whiteColor];
 //    self.bgColor = [UIColor lightGrayColor];
 //    self.bgColor = [UIColor clearColor];
-    self.bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sample2.png"]];
+    self.bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sample.png"]];
+    
+    
+    
+    
 
 //    self.backgroundColor = [UIColor clearColor];
     self.backgroundColor = [UIColor lightGrayColor];

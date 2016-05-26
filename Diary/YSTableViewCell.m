@@ -52,11 +52,7 @@
     
 //    YSTableViewCell * t = [[YSTableViewCell alloc]init];
 //    t.todayTxt = entry.body;
-    
 //        todayTxt = @"hihi";
-
-
-    
 //    NSLog(@" _todayTxt : %@", t.todayTxt);
     
 
@@ -75,7 +71,7 @@
         CGFloat height = CGRectGetHeight(self.mainImgView.bounds);
 
         self.mainImgView.image = [UIImage imageNamed:@"icon_noImage"];
-        self.mainImgView.bounds = CGRectMake(width/2 + 30, height/2 +30, 60, 60);
+//        self.mainImgView.bounds = CGRectMake(width/2 + 30, height/2 +30, 60, 60);
     }
     
     //Weather
@@ -83,10 +79,10 @@
         self.moodImgView.image = [UIImage imageNamed:@"sunny_black"];
         
     }else if(entry.mood == YSDiaryEntryWeatherWindy){
-        self.moodImgView.image = [UIImage imageNamed:@"sunny_black"];
+        self.moodImgView.image = [UIImage imageNamed:@"cloudy_black"];
         
     }else if(entry.mood == YSDiaryEntryWeatherRainyAndSnowy){
-        self.moodImgView.image = [UIImage imageNamed:@"sunny_black"];
+        self.moodImgView.image = [UIImage imageNamed:@"snowrain_black"];
     }
     
 

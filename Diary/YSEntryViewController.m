@@ -45,51 +45,63 @@
 
 @implementation YSEntryViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setPickedImage:[UIImage imageWithData:self.entry.imageData]];
+    
     _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     _tapRecognizer.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:_tapRecognizer];
     
+        NSDate *date;
     
     
-    NSDate *date;
-    
-    if(self.entry != nil){
+    if (self.entry != nil) {
         self.textView.text = self.entry.body;
-//        self.pickedMood = self.entry.mood;
         self.pickedWeather = self.entry.mood;
-
         date = [NSDate dateWithTimeIntervalSince1970:self.entry.date];
-        
-    }else {
-//        self.pickedMood  = YSDiaryEntryMoodAverage;
-        self.pickedWeather =  YSDiaryEntryWeatherSunny;
+    } else {
+        self.pickedWeather = YSDiaryEntryWeatherSunny;
         date = [NSDate date];
-        
+    }
+
+    
+////        self.pickedMood  = YSDiaryEntryMoodAverage;
+//        self.pickedWeather =  YSDiaryEntryWeatherSunny;
+//        date = [NSDate date];
+//        
 //    }else  {
 ////        self.pickedMood  = YSDiaryEntryMoodAverage;
 //        date = [NSDate date];
 //    }else {
 ////        self.pickedMood  = YSDiaryEntryMoodBad;
 //        date = [NSDate date];
-//
+
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"MMM dd일 (EEEE) "];
     self.dateLabel.text = [dateFormatter stringFromDate:date];
     self.textView.inputAccessoryView = self.accessoryView; //up of the keybord
     self.imgButton.layer.cornerRadius = CGRectGetWidth(self.imgButton.frame) / 10.0f;
-
-    }
 }
 
 
-//- (void)viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
-//    [self.textView becomeFirstResponder];
-//
-//}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.textView becomeFirstResponder];
+
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -109,7 +121,7 @@
     entry.body = self.textView.text;
     entry.date = [[NSDate date] timeIntervalSince1970];
     entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.75);
-//    entry.location = self.location;
+    entry.mood = self.pickedWeather; //not self.entry.mood
     
     [coreDataStack saveContext];
 }
@@ -117,6 +129,7 @@
 - (void)updateDairyEntry {
     
     self.entry.body = self.textView.text;
+    self.entry.mood = self.pickedWeather;
     self.entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.75);
 
     YSCoreDataStack *coreDataStack =[YSCoreDataStack defaultStack];
@@ -179,26 +192,37 @@
 }
 
 //UI alpha
-//-(void)setPickedMood:(enum YSDiaryEntryMood)pickedWeather {
-//    _pickedMood = pickedWeather;
-//    self.goodButton.alpha = 0.5f;
-//    self.averageButton.alpha = 0.5f;
-//    self.badButton.alpha = 0.5f;
-//
-//    switch (pickedWeather) {
-//        case YSDiaryEntryMoodGood:
-//            self.goodButton.alpha = 1.0f;
-//            break;
-//        case YSDiaryEntryMoodAverage:
-//            self.averageButton.alpha = 1.0f;
-//            break;
-//            
-//        case YSDiaryEntryMoodBad:
-//            self.badButton.alpha = 1.0f;
-//            break;
-//    }
-//
-//}
+
+/*
+ extern NS_ENUM(int16_t, YSDiaryEntryWeather){
+ YSDiaryEntryWeatherSunny = 0,
+ YSDiaryEntryWeatherWindy = 1,
+ YSDiaryEntryWeatherRainyAndSnowy = 2
+ 
+ };
+ */
+
+-(void)setPickedWeather:(enum YSDiaryEntryWeather)pickedWeather {
+    
+    _pickedWeather = pickedWeather;
+    self.goodButton.alpha = 0.3f;
+    self.averageButton.alpha = 0.3f;
+    self.badButton.alpha = 0.3f;
+
+    switch (pickedWeather) {
+        case YSDiaryEntryWeatherSunny:
+            self.goodButton.alpha = 2.0f;
+            break;
+        case YSDiaryEntryWeatherWindy:
+            self.averageButton.alpha = 2.0f;
+            break;
+            
+        case YSDiaryEntryWeatherRainyAndSnowy:
+            self.badButton.alpha = 2.0f;
+            break;
+    }
+
+}
 
 -(void)setPickedImage:(UIImage *)pickedImage{
     _pickedImage = pickedImage;
@@ -231,16 +255,16 @@
 
 
 - (IBAction)goodButton:(id)sender {
-//    self.pickedMood = YSDiaryEntryMoodGood;
+    self.pickedWeather = YSDiaryEntryWeatherSunny;
     
 }
 
 - (IBAction)averageButton:(id)sender {
-//    self.pickedMood = YSDiaryEntryMoodAverage;
+    self.pickedWeather = YSDiaryEntryWeatherWindy;
 }
 
 - (IBAction)badButton:(id)sender {
-//    self.pickedMood = YSDiaryEntryMoodBad;
+    self.pickedWeather = YSDiaryEntryWeatherRainyAndSnowy;
 }
 
 - (IBAction)imgButton:(id)sender {
