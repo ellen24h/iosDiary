@@ -25,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.sectionHeaderHeight = 44.0;
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,7 +36,7 @@
     
     [self. fetchedResultsController performFetch:nil];
     
-
+    
     
     
 }
@@ -116,9 +119,12 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    
     return [sectionInfo name];
 
 }
+
+
 
 
 // Override to support conditional editing of the table view.

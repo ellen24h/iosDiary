@@ -29,7 +29,7 @@
 
     
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
-    navigationBarAppearance.barTintColor =[UIColor colorWithRed:238.0/255.0 green:63.0/255.0 blue:53.0/255.0 alpha:1.0f];
+    navigationBarAppearance.barTintColor =[UIColor colorWithRed:244.0/255.0 green:88.0/255.0 blue:68.0/255.0 alpha:1.0f];
     
     
 //    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];

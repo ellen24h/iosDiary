@@ -10,11 +10,17 @@
 
 @class YSDiaryEntry;
 
-@interface YSTableViewCell : UITableViewCell
+@interface YSTableViewCell : UITableViewCell{
+    
+//        NSString *todayTxt;
+
+
+}
 
 
 +(CGFloat) heightForEntry:(YSDiaryEntry *)entry;
 -(void) configureCellForEntry:(YSDiaryEntry *)entry;
 
+@property (nonatomic, readwrite) NSString *todayTxt;
 
 @end

@@ -10,24 +10,32 @@
 #import "YSDiaryEntry.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface YSTableViewCell ()
+@interface YSTableViewCell (){
+
+//    NSString *todayTxt;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *mainImgView;
 @property (weak, nonatomic) IBOutlet UIImageView *moodImgView;
 
+//
+
 @end
 
 @implementation YSTableViewCell
+@synthesize todayTxt;
 
 
+
+// check
 +(CGFloat)heightForEntry:(YSDiaryEntry *)entry {
     const CGFloat topMargin = 35.0f;
     const CGFloat bottonMargin = 39.0f;
-    const CGFloat minHeight = 85.0f;
+    const CGFloat minHeight = 185.0f;
 
     UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     
@@ -41,55 +49,51 @@
 -(void) configureCellForEntry:(YSDiaryEntry *)entry{
 
     self.bodyLabel.text = entry.body;
-    self.locationLabel.text = entry.location;
+    
+//    YSTableViewCell * t = [[YSTableViewCell alloc]init];
+//    t.todayTxt = entry.body;
+    
+//        todayTxt = @"hihi";
+
+
+    
+//    NSLog(@" _todayTxt : %@", t.todayTxt);
+    
+
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"MMM d (EE)" ];
+    [dateFormatter setDateFormat:@"M월 dd일 (E) hh:mm"];
     
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:entry.date];
     self.dateLabel.text = [dateFormatter stringFromDate:date];
     
     
-    
-    
-    //test-time
-    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc]init];
-    [dateFormatter2 setDateFormat:@"hh:mm" ];
-    
-    NSDate *date2 = [NSDate dateWithTimeIntervalSince1970:entry.date];
-    [dateFormatter stringFromDate:date2];
-    
-    NSLog(@"date : %@", date2);
-    
-    
     if(entry.imageData){
         self.mainImgView.image = [UIImage imageWithData:entry.imageData];
     }else{
+        CGFloat width = CGRectGetWidth(self.mainImgView.bounds);
+        CGFloat height = CGRectGetHeight(self.mainImgView.bounds);
+
         self.mainImgView.image = [UIImage imageNamed:@"icon_noImage"];
+        self.mainImgView.bounds = CGRectMake(width/2 + 30, height/2 +30, 60, 60);
     }
     
-    
-    if(entry.mood == YSDiaryEntryMoodGood){
-        self.moodImgView.image = [UIImage imageNamed:@"icn_happy"];
+    //Weather
+    if(entry.mood == YSDiaryEntryWeatherSunny){
+        self.moodImgView.image = [UIImage imageNamed:@"sunny_black"];
         
-    }else if(entry.mood == YSDiaryEntryMoodAverage){
-        self.moodImgView.image = [UIImage imageNamed:@"icn_Average"];
+    }else if(entry.mood == YSDiaryEntryWeatherWindy){
+        self.moodImgView.image = [UIImage imageNamed:@"sunny_black"];
         
-    }else if(entry.mood == YSDiaryEntryMoodBad){
-        self.moodImgView.image = [UIImage imageNamed:@"icn_bad"];
+    }else if(entry.mood == YSDiaryEntryWeatherRainyAndSnowy){
+        self.moodImgView.image = [UIImage imageNamed:@"sunny_black"];
     }
+    
+
     
 //    self.mainImgView.layer.cornerRadius = CGRectGetWidth(self.mainImgView.frame) / 2.0f;
     
-    if (entry.location.length > 0){
-        self.locationLabel.text = entry.location;
-        NSLog(@"entry.location : %@ ",entry.location);
-        
-    }else {
-        self.locationLabel.text = @"No location";
-        NSLog(@"No location");
 
-    }
 }
 
 

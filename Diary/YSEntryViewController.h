@@ -10,8 +10,11 @@
 
 @class YSDiaryEntry;
 
-@interface YSEntryViewController : UIViewController
+@interface YSEntryViewController : UIViewController <UITextFieldDelegate>
 
 @property(nonatomic, strong) YSDiaryEntry *entry;
+@property (nonatomic) UITapGestureRecognizer *tapRecognizer;
+
+
 
 @end

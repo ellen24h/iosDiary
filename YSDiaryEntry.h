@@ -11,12 +11,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NS_ENUM(int16_t, YSDiaryEntryMood){
-    YSDiaryEntryMoodGood = 0,
-    YSDiaryEntryMoodAverage = 1,
-    YSDiaryEntryMoodBad = 2
-};
+//extern NS_ENUM(int16_t, YSDiaryEntryMood){
+//    YSDiaryEntryMoodGood = 0,
+//    YSDiaryEntryMoodAverage = 1,
+//    YSDiaryEntryMoodBad = 2
+//};
 
+extern NS_ENUM(int16_t, YSDiaryEntryWeather){
+    YSDiaryEntryWeatherSunny = 0,
+    YSDiaryEntryWeatherWindy = 1,
+    YSDiaryEntryWeatherRainyAndSnowy = 2
+    
+};
 
 @interface YSDiaryEntry : NSManagedObject
 

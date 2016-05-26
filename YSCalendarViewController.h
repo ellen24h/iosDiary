@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class YSDiaryEntry;
+
 @interface YSCalendarViewController : UIViewController
 
+
++(CGFloat) heightForEntry:(YSDiaryEntry *)entry;
+-(void) configureCellForEntry:(YSDiaryEntry *)entry;
+
+@property(nonatomic, strong) YSDiaryEntry *entry;
+
+
 @end
+
+
+
+

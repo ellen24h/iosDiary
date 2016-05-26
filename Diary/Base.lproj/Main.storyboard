@@ -13,28 +13,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rzc-h8-OtA">
-                                <rect key="frame" x="43" y="76" width="234" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OPT-DN-72L">
-                                <rect key="frame" x="102" y="121" width="160" height="160"/>
+                                <rect key="frame" x="107" y="121" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icon_noImage"/>
                                 <connections>
                                     <action selector="imgButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fb-ai-rbE"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="y2h-TS-RfC">
-                                <rect key="frame" x="65" y="305" width="255" height="230"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="How about ur day?" textAlignment="natural" id="y2h-TS-RfC">
+                                <rect key="frame" x="25" y="303" width="330" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rzc-h8-OtA">
+                                <rect key="frame" x="65" y="76" width="244" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -65,24 +65,12 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IVN-tR-sjE">
-                            <rect key="frame" x="250" y="8" width="125" height="35"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Bad" image="icn_bad_lrg.png">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="badButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gR-vc-oXl"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x8l-9Z-Xbv">
-                            <rect key="frame" x="125" y="8" width="125" height="35"/>
+                            <rect key="frame" x="125" y="0.0" width="125" height="53"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.93333333333333335" green="0.24705882352941178" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <inset key="imageEdgeInsets" minX="-13" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Average" image="icn_average_lrg.png">
+                            <state key="normal" image="cloudy_white.png">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -90,22 +78,41 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Gca-TY-dbm">
-                            <rect key="frame" x="0.0" y="8" width="126" height="35"/>
+                            <rect key="frame" x="0.0" y="0.0" width="126" height="52"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Good" image="icn_good_lrg.png">
+                            <state key="normal" image="sunny_white.png">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="goodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="87U-Ge-Cza"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IVN-tR-sjE">
+                            <rect key="frame" x="250" y="0.0" width="125" height="53"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" image="snowrain_white.png">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="badButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gR-vc-oXl"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.boarderWidth">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.boarderColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="181.5" y="-352.5"/>
+            <point key="canvasLocation" x="407.5" y="-416.5"/>
         </scene>
         <!--about-->
         <scene sceneID="YMd-i0-ZIZ">
@@ -124,7 +131,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LMb-00-0gr">
-                                            <rect key="frame" x="20" y="0.0" width="166" height="38"/>
+                                            <rect key="frame" x="33" y="1" width="221" height="38"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -135,21 +142,14 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gIi-95-XWd">
-                                            <rect key="frame" x="188" y="0.0" width="39" height="39"/>
+                                            <rect key="frame" x="256" y="5" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gsw-II-Flb">
-                                            <rect key="frame" x="8" y="390" width="359" height="142"/>
+                                            <rect key="frame" x="8" y="388" width="359" height="142"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JFH-g7-0D0">
-                                            <rect key="frame" x="252" y="1" width="84" height="38"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -157,7 +157,6 @@
                                 <connections>
                                     <outlet property="bodyLabel" destination="Gsw-II-Flb" id="sIg-QS-9iN"/>
                                     <outlet property="dateLabel" destination="LMb-00-0gr" id="FYs-r2-n9c"/>
-                                    <outlet property="locationLabel" destination="JFH-g7-0D0" id="I6U-dM-Dc1"/>
                                     <outlet property="mainImgView" destination="6oV-Eo-TO2" id="ovh-74-cJd"/>
                                     <outlet property="moodImgView" destination="gIi-95-XWd" id="ciG-Mq-NSP"/>
                                     <segue destination="j9Q-ee-FAp" kind="modal" identifier="Edit" id="TUo-bz-8jv"/>
@@ -172,6 +171,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="about" id="Uu1-uk-CQo">
                         <barButtonItem key="leftBarButtonItem" image="icn_calendar.png" id="QT0-9O-j1n">
+                            <inset key="imageInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                             <connections>
                                 <segue destination="Ocr-ga-OW5" kind="push" id="ASW-WW-fEh"/>
                             </connections>
@@ -186,7 +186,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTx-1D-sda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77.5" y="394.5"/>
+            <point key="canvasLocation" x="85.5" y="296.5"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="VSm-4a-xqu">
@@ -195,10 +195,22 @@
                     <view key="view" contentMode="scaleToFill" id="b54-sH-gK1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wmg-Bk-2MH">
+                                <rect key="frame" x="8" y="477" width="359" height="142"/>
+                                <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ail-PS-f4Y"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bodyLabel" destination="Wmg-Bk-2MH" id="5sa-wD-N0I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7CL-MG-3Ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -238,15 +250,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9k-qV-qAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-218.5" y="-352.5"/>
+            <point key="canvasLocation" x="-52.5" y="-520.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icn_average_lrg.png" width="15" height="15"/>
-        <image name="icn_bad_lrg.png" width="15" height="15"/>
+        <image name="cloudy_white.png" width="50" height="50"/>
         <image name="icn_calendar.png" width="28" height="30"/>
-        <image name="icn_good_lrg.png" width="15" height="15"/>
         <image name="icon_noImage" width="47" height="47"/>
+        <image name="snowrain_white.png" width="50" height="50"/>
+        <image name="sunny_white.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Q0j-L6-btl"/>

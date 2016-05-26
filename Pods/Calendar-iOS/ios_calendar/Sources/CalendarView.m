@@ -12,33 +12,53 @@
 
 #import <CoreText/CoreText.h>
 
-static const CGFloat kCalendarViewDayCellWidth       = 35;
-static const CGFloat kCalendarViewDayCellHeight      = 35;
-static const CGFloat kCalendarViewDayCellOffset      = 5;
 
-static const CGFloat kCalendarViewMonthCellWidth     = 90;
+
+static const CGFloat kCalendarViewDayCellWidth       = 40;//날짜셀 크기
+static const CGFloat kCalendarViewDayCellHeight      = 40;
+static const CGFloat kCalendarViewDayCellOffset      = 7; //날짜셀 간격
+//static const CGFloat kCalendarViewDayCellWidth       = 35;
+//static const CGFloat kCalendarViewDayCellHeight      = 35;
+//static const CGFloat kCalendarViewDayCellOffset      = 5;
+
+static const CGFloat kCalendarViewMonthCellWidth     = 110; //100
+//static const CGFloat kCalendarViewMonthCellHeight    = 60; //월 높이
+//static const CGFloat kCalendarViewMonthCellWidth     = 90;
 static const CGFloat kCalendarViewMonthCellHeight    = 30;
+
+
+//static const CGFloat kCalendarViewMonthTitleOffsetY  = 100; //월 선택에서 헤더와의 간격
 static const CGFloat kCalendarViewMonthTitleOffsetY  = 50;
 static const CGFloat kCalendarViewMonthYStep         = 60;
-static const NSInteger kCalendarViewMonthInLine      = 3;
+static const NSInteger kCalendarViewMonthInLine      = 3;  //한 줄에 월이 몇개
 
-static const CGFloat kCalendarViewYearCellWidth      = 54;
-static const CGFloat kCalendarViewYearCellHeight     = 30;
-static const CGFloat kCalendarViewYearTitleOffsetY   = 50;
+static const CGFloat kCalendarViewYearCellWidth      = 80; //54
+static const CGFloat kCalendarViewYearCellHeight     = 40;  //30 년 선택에서 각 연도 셀높이
+static const CGFloat kCalendarViewYearTitleOffsetY   = 50;  //년 선택에서 헤더와의 간격
 static const CGFloat kCalendarViewYearYStep          = 45;
 static const NSInteger kCalendarViewYearsAround      = 12;
 static const NSInteger kCalendarViewYearsInLine      = 5;
+
+//static const CGFloat kCalendarViewYearCellWidth      = 54;
+//static const CGFloat kCalendarViewYearCellHeight     = 30;
+//static const CGFloat kCalendarViewYearTitleOffsetY   = 50;
+//static const CGFloat kCalendarViewYearYStep          = 45;
+//static const NSInteger kCalendarViewYearsAround      = 12;
+//static const NSInteger kCalendarViewYearsInLine      = 5;
 
 static const CGFloat kCalendarViewMonthLabelWidth    = 100;
 static const CGFloat kCalendarViewMonthLabelHeight   = 20;
 
 static const CGFloat kCalendarViewYearLabelWidth     = 40;
-static const CGFloat kCalendarViewYearLabelHeight    = 20;
+static const CGFloat kCalendarViewYearLabelHeight    = 120; //20
 
 static const CGFloat kCalendarViewWeekDaysYOffset    = 30;
 static const CGFloat kCalendarViewDaysYOffset        = 60;
 
 static NSString * const kCalendarViewDefaultFont     = @"TrebuchetMS";
+
+//static const CGFloat kCalendarViewDayFontSize        = 20;
+//static const CGFloat kCalendarViewHeaderFontSize     = 22;
 static const CGFloat kCalendarViewDayFontSize        = 16;
 static const CGFloat kCalendarViewHeaderFontSize     = 18;
 
@@ -49,7 +69,8 @@ static const NSInteger kCalendarViewMaxLinesCount    = 6;
 static const CGFloat kCalendarViewSelectionRound     = 3.0;
 
 static const NSTimeInterval kCalendarViewSwipeMonthFadeInTime  = 0.2;
-static const NSTimeInterval kCalendarViewSwipeMonthFadeOutTime = 0.6;
+static const NSTimeInterval kCalendarViewSwipeMonthFadeOutTime = 0.2;
+//static const NSTimeInterval kCalendarViewSwipeMonthFadeOutTime = 0.6;
 
 @implementation CalendarViewRect;
 
@@ -182,10 +203,19 @@ static const NSTimeInterval kCalendarViewSwipeMonthFadeOutTime = 0.6;
     monthTitleRect = CGRectMake(0, 0, 0, 0);
     
     self.fontColor = [UIColor blackColor];
-    self.fontHeaderColor = [UIColor redColor];
+    
+//    navigationBarAppearance.barTintColor =[UIColor colorWithRed:244.0/255.0 green:88.0/255.0 blue:68.0/255.0 alpha:1.0f];
+
+    
+    self.fontHeaderColor = [UIColor colorWithRed:244.0/255.0 green:88.0/255.0 blue:68.0/255.0 alpha:1.0f];
     self.fontSelectedColor = [UIColor whiteColor];
-    self.selectionColor = [UIColor redColor];
-    self.todayColor = [UIColor redColor];
+    self.selectionColor = [UIColor colorWithRed:244.0/255.0 green:88.0/255.0 blue:68.0/255.0 alpha:1.0f];
+    self.todayColor = [UIColor colorWithRed:244.0/255.0 green:88.0/255.0 blue:68.0/255.0 alpha:1.0f];
+    
+//    self.fontHeaderColor = [UIColor redColor];
+//    self.fontSelectedColor = [UIColor whiteColor];
+//    self.selectionColor = [UIColor redColor];
+//    self.todayColor = [UIColor redColor];
     
     
 //    self.bgColor = [UIColor whiteColor];
