@@ -27,7 +27,7 @@
     
     
 //    //instagram
-    SimpleAuth.configuration[@"instagram"] = @{@"client_id" : @"your id",SimpleAuthRedirectURIKey : @"photobombers://auth/instagram"};
+    SimpleAuth.configuration[@"instagram"] = @{@"client_id" : @"1ee1ba19d1264116b419c85b6920c83c",SimpleAuthRedirectURIKey : @"photobombers://auth/instagram"};
 //
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //

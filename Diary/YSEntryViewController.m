@@ -11,17 +11,11 @@
 #import "YSDiaryEntry.h"
 #import "AppDelegate.h"
 #import "YSPhotosViewController.h"
-#import <CoreLocation/CoreLocation.h>
 #import <SimpleAuth/SimpleAuth.h>
 
 
-@interface YSEntryViewController () <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
+@interface YSEntryViewController () <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-//location
-@property (nonatomic,strong) CLLocationManager *locationManager;
-@property (nonatomic,strong) NSString *location;
-
-//@property (nonatomic, assign) enum YSDiaryEntryMood pickedMood;
 
 //YSDiaryEntryWeather
 @property (nonatomic, assign) enum YSDiaryEntryWeather pickedWeather;
@@ -46,7 +40,11 @@
 //    
 //};
 
+
 @implementation YSEntryViewController
+
+@synthesize txtDetail;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -79,19 +77,9 @@
         date = [NSDate date];
     }
 
+
+    _textView.delegate = self;
     
-////        self.pickedMood  = YSDiaryEntryMoodAverage;
-//        self.pickedWeather =  YSDiaryEntryWeatherSunny;
-//        date = [NSDate date];
-//        
-//    }else  {
-////        self.pickedMood  = YSDiaryEntryMoodAverage;
-//        date = [NSDate date];
-//    }else {
-////        self.pickedMood  = YSDiaryEntryMoodBad;
-//        date = [NSDate date];
-
-
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"MMM dd일 (EEEE) "];
     self.dateLabel.text = [dateFormatter stringFromDate:date];
@@ -107,9 +95,20 @@
 }
 
 
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+//        self.txtDetail.text = [self.textView.text stringByAppendingString:@"Hello!"];
+//    
+    NSLog(@"Hello");
+//    if ([textView.text isEqualToString:@"Enter text here"]){
+//        textView.text = @"??";
+//        
+//    }
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)dismissSelf {
@@ -123,7 +122,7 @@
     
     entry.body = self.textView.text;
     entry.date = [[NSDate date] timeIntervalSince1970];
-    entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.75);
+    entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 1);  //0.75
     entry.mood = self.pickedWeather; //not self.entry.mood
     
     [coreDataStack saveContext];
@@ -219,16 +218,6 @@
     [self.view endEditing:YES];
 }
 
-//UI alpha
-
-/*
- extern NS_ENUM(int16_t, YSDiaryEntryWeather){
- YSDiaryEntryWeatherSunny = 0,
- YSDiaryEntryWeatherWindy = 1,
- YSDiaryEntryWeatherRainyAndSnowy = 2
- 
- };
- */
 
 -(void)setPickedWeather:(enum YSDiaryEntryWeather)pickedWeather {
     

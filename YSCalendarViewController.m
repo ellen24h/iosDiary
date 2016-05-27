@@ -49,13 +49,8 @@
         self.bodyLabel.text = @"오늘의 한 줄";
 
     }
-    
-    
-
-    
 }
 
-//https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/EncapsulatingData/EncapsulatingData.html#//apple_ref/doc/uid/TP40011210-CH5-SW1
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

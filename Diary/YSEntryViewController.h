@@ -10,11 +10,17 @@
 
 @class YSDiaryEntry;
 
-@interface YSEntryViewController : UIViewController <UITextFieldDelegate>
+@interface YSEntryViewController : UIViewController <UITextFieldDelegate>{
+
+UITextView *txtDetail;
+    
+    
+}
 
 @property(nonatomic, strong) YSDiaryEntry *entry;
 @property (nonatomic) UITapGestureRecognizer *tapRecognizer;
-
+@property (nonatomic, retain) IBOutlet UITextView *txtDetail;
+- (void)textViewDidBeginEditing:(UITextView *)textView;
 
 
 @end

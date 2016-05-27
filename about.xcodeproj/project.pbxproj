@@ -33,7 +33,6 @@
 		6F44F5F71CE99B660042D408 /* icn_write_post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5DE1CE99B660042D408 /* icn_write_post@2x.png */; };
 		6F44F5F81CE99B660042D408 /* icon_noImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5DF1CE99B660042D408 /* icon_noImage@2x.png */; };
 		6F44F5FA1CE9CCFD0042D408 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F44F5F91CE9CCFD0042D408 /* QuartzCore.framework */; };
-		6F44F5FC1CE9D14F0042D408 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F44F5FB1CE9D14F0042D408 /* CoreLocation.framework */; };
 		6F45EFBF1CF82E4E00DC84E7 /* YSPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F45EFBA1CF82E4E00DC84E7 /* YSPhotoCell.m */; };
 		6F45EFC01CF82E4E00DC84E7 /* YSPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F45EFBC1CF82E4E00DC84E7 /* YSPhotoController.m */; };
 		6F45EFC11CF82E4E00DC84E7 /* YSPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F45EFBE1CF82E4E00DC84E7 /* YSPhotosViewController.m */; };
@@ -83,7 +82,6 @@
 		6F44F5DE1CE99B660042D408 /* icn_write_post@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_write_post@2x.png"; sourceTree = "<group>"; };
 		6F44F5DF1CE99B660042D408 /* icon_noImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_noImage@2x.png"; sourceTree = "<group>"; };
 		6F44F5F91CE9CCFD0042D408 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		6F44F5FB1CE9D14F0042D408 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6F45EFB91CF82E4E00DC84E7 /* YSPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPhotoCell.h; sourceTree = "<group>"; };
 		6F45EFBA1CF82E4E00DC84E7 /* YSPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPhotoCell.m; sourceTree = "<group>"; };
 		6F45EFBB1CF82E4E00DC84E7 /* YSPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPhotoController.h; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F44F5FC1CE9D14F0042D408 /* CoreLocation.framework in Frameworks */,
 				6F44F5FA1CE9CCFD0042D408 /* QuartzCore.framework in Frameworks */,
 				298FA1476EFAF02AC44C9529 /* Pods.framework in Frameworks */,
 			);
@@ -188,20 +185,27 @@
 			name = Instagram;
 			sourceTree = "<group>";
 		};
-		6FFE447C1CE5A13200B61141 = {
+		6F8D15291CF831AB0039ECF5 /* DiaryEntry */ = {
 			isa = PBXGroup;
 			children = (
-				6F2263681CEB5BF200660B71 /* YSCalendarViewController.h */,
-				6F2263691CEB5BF200660B71 /* YSCalendarViewController.m */,
-				6F2263671CEB586100660B71 /* podfile */,
 				6FA2E8A01CE71B4A0007398C /* YSDiaryEntry+CoreDataProperties.h */,
 				6FA2E8A11CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m */,
 				6FA2E8A21CE71B4B0007398C /* YSDiaryEntry.h */,
 				6FA2E8A31CE71B4B0007398C /* YSDiaryEntry.m */,
+			);
+			name = DiaryEntry;
+			sourceTree = "<group>";
+		};
+		6FFE447C1CE5A13200B61141 = {
+			isa = PBXGroup;
+			children = (
 				6F44F5C61CE99B660042D408 /* Img */,
+				6F8D15291CF831AB0039ECF5 /* DiaryEntry */,
+				6F2263671CEB586100660B71 /* podfile */,
+				6F2263681CEB5BF200660B71 /* YSCalendarViewController.h */,
+				6F2263691CEB5BF200660B71 /* YSCalendarViewController.m */,
 				6FFE44871CE5A13200B61141 /* Diary */,
 				6FFE44861CE5A13200B61141 /* Products */,
-				6F44F5FB1CE9D14F0042D408 /* CoreLocation.framework */,
 				6F44F5F91CE9CCFD0042D408 /* QuartzCore.framework */,
 				C6F9C633AAB98A6D66AF126B /* Pods */,
 				873BA8E8FA598992CB2E8DC5 /* Frameworks */,
