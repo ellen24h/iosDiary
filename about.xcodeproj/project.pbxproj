@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		298FA1476EFAF02AC44C9529 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AEEE5490CFCAF255E7BA20 /* Pods.framework */; };
 		6F14DE871CF1A7A60023B170 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F14DE861CF1A7A60023B170 /* sample.png */; };
 		6F14DE891CF1A9BE0023B170 /* sample2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F14DE881CF1A9BE0023B170 /* sample2.png */; };
 		6F22636A1CEB5BF200660B71 /* YSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2263691CEB5BF200660B71 /* YSCalendarViewController.m */; };
@@ -33,6 +34,10 @@
 		6F44F5F81CE99B660042D408 /* icon_noImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5DF1CE99B660042D408 /* icon_noImage@2x.png */; };
 		6F44F5FA1CE9CCFD0042D408 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F44F5F91CE9CCFD0042D408 /* QuartzCore.framework */; };
 		6F44F5FC1CE9D14F0042D408 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F44F5FB1CE9D14F0042D408 /* CoreLocation.framework */; };
+		6F45EFBF1CF82E4E00DC84E7 /* YSPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F45EFBA1CF82E4E00DC84E7 /* YSPhotoCell.m */; };
+		6F45EFC01CF82E4E00DC84E7 /* YSPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F45EFBC1CF82E4E00DC84E7 /* YSPhotoController.m */; };
+		6F45EFC11CF82E4E00DC84E7 /* YSPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F45EFBE1CF82E4E00DC84E7 /* YSPhotosViewController.m */; };
+		6F45EFC41CF82E5600DC84E7 /* YSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F45EFC31CF82E5600DC84E7 /* YSDetailViewController.m */; };
 		6F5268B81CE8C43B00EE4705 /* YSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5268B71CE8C43B00EE4705 /* YSNavigationController.m */; };
 		6F5268BB1CE8CA5C00EE4705 /* YSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5268BA1CE8CA5C00EE4705 /* YSTableViewCell.m */; };
 		6FA2E8A41CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2E8A11CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m */; };
@@ -47,15 +52,13 @@
 		6FFE44A41CE5A5DE00B61141 /* YSCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFE44A31CE5A5DE00B61141 /* YSCoreDataStack.m */; };
 		6FFE44BB1CE5C06400B61141 /* YSEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFE44BA1CE5C06400B61141 /* YSEntryViewController.m */; };
 		6FFE44D21CE5E48200B61141 /* YSEntryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFE44D11CE5E48200B61141 /* YSEntryListViewController.m */; };
-		B2D20BED1348933D10AF6A56 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3C73251681DBEE6374D2DF /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2822A903341E360C41AA8D0E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		2B3C73251681DBEE6374D2DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F14DE861CF1A7A60023B170 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		6F14DE881CF1A9BE0023B170 /* sample2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample2.png; sourceTree = "<group>"; };
-		6F2263671CEB586100660B71 /* podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
+		6F2263671CEB586100660B71 /* podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6F2263681CEB5BF200660B71 /* YSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarViewController.h; sourceTree = "<group>"; };
 		6F2263691CEB5BF200660B71 /* YSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarViewController.m; sourceTree = "<group>"; };
 		6F32A2641CF43E460095B854 /* about_logo_rounded .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_logo_rounded .png"; sourceTree = "<group>"; };
@@ -81,6 +84,14 @@
 		6F44F5DF1CE99B660042D408 /* icon_noImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_noImage@2x.png"; sourceTree = "<group>"; };
 		6F44F5F91CE9CCFD0042D408 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6F44F5FB1CE9D14F0042D408 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6F45EFB91CF82E4E00DC84E7 /* YSPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPhotoCell.h; sourceTree = "<group>"; };
+		6F45EFBA1CF82E4E00DC84E7 /* YSPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPhotoCell.m; sourceTree = "<group>"; };
+		6F45EFBB1CF82E4E00DC84E7 /* YSPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPhotoController.h; sourceTree = "<group>"; };
+		6F45EFBC1CF82E4E00DC84E7 /* YSPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPhotoController.m; sourceTree = "<group>"; };
+		6F45EFBD1CF82E4E00DC84E7 /* YSPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPhotosViewController.h; sourceTree = "<group>"; };
+		6F45EFBE1CF82E4E00DC84E7 /* YSPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPhotosViewController.m; sourceTree = "<group>"; };
+		6F45EFC21CF82E5600DC84E7 /* YSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDetailViewController.h; sourceTree = "<group>"; };
+		6F45EFC31CF82E5600DC84E7 /* YSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDetailViewController.m; sourceTree = "<group>"; };
 		6F5268B61CE8C43B00EE4705 /* YSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSNavigationController.h; sourceTree = "<group>"; };
 		6F5268B71CE8C43B00EE4705 /* YSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSNavigationController.m; sourceTree = "<group>"; };
 		6F5268B91CE8CA5C00EE4705 /* YSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTableViewCell.h; sourceTree = "<group>"; };
@@ -106,6 +117,7 @@
 		6FFE44BA1CE5C06400B61141 /* YSEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSEntryViewController.m; sourceTree = "<group>"; };
 		6FFE44D01CE5E48200B61141 /* YSEntryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSEntryListViewController.h; sourceTree = "<group>"; };
 		6FFE44D11CE5E48200B61141 /* YSEntryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSEntryListViewController.m; sourceTree = "<group>"; };
+		C6AEEE5490CFCAF255E7BA20 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBFB0350F595654EF109B0B5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +128,7 @@
 			files = (
 				6F44F5FC1CE9D14F0042D408 /* CoreLocation.framework in Frameworks */,
 				6F44F5FA1CE9CCFD0042D408 /* QuartzCore.framework in Frameworks */,
-				B2D20BED1348933D10AF6A56 /* libPods.a in Frameworks */,
+				298FA1476EFAF02AC44C9529 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +173,21 @@
 			path = Diary/Img;
 			sourceTree = "<group>";
 		};
+		6F45EF9A1CF8258400DC84E7 /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				6F45EFC21CF82E5600DC84E7 /* YSDetailViewController.h */,
+				6F45EFC31CF82E5600DC84E7 /* YSDetailViewController.m */,
+				6F45EFB91CF82E4E00DC84E7 /* YSPhotoCell.h */,
+				6F45EFBA1CF82E4E00DC84E7 /* YSPhotoCell.m */,
+				6F45EFBB1CF82E4E00DC84E7 /* YSPhotoController.h */,
+				6F45EFBC1CF82E4E00DC84E7 /* YSPhotoController.m */,
+				6F45EFBD1CF82E4E00DC84E7 /* YSPhotosViewController.h */,
+				6F45EFBE1CF82E4E00DC84E7 /* YSPhotosViewController.m */,
+			);
+			name = Instagram;
+			sourceTree = "<group>";
+		};
 		6FFE447C1CE5A13200B61141 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +219,7 @@
 		6FFE44871CE5A13200B61141 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				6F45EF9A1CF8258400DC84E7 /* Instagram */,
 				6FFE44911CE5A13200B61141 /* Main.storyboard */,
 				6FFE448B1CE5A13200B61141 /* AppDelegate.h */,
 				6FFE448C1CE5A13200B61141 /* AppDelegate.m */,
@@ -228,7 +256,7 @@
 		873BA8E8FA598992CB2E8DC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2B3C73251681DBEE6374D2DF /* libPods.a */,
+				C6AEEE5490CFCAF255E7BA20 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -391,11 +419,15 @@
 				6F22636A1CEB5BF200660B71 /* YSCalendarViewController.m in Sources */,
 				6F5268BB1CE8CA5C00EE4705 /* YSTableViewCell.m in Sources */,
 				6FFE448D1CE5A13200B61141 /* AppDelegate.m in Sources */,
+				6F45EFC11CF82E4E00DC84E7 /* YSPhotosViewController.m in Sources */,
 				6FA2E8A41CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m in Sources */,
 				6FFE448A1CE5A13200B61141 /* main.m in Sources */,
 				6F5268B81CE8C43B00EE4705 /* YSNavigationController.m in Sources */,
 				6FFE44BB1CE5C06400B61141 /* YSEntryViewController.m in Sources */,
+				6F45EFC01CF82E4E00DC84E7 /* YSPhotoController.m in Sources */,
 				6FFE44D21CE5E48200B61141 /* YSEntryListViewController.m in Sources */,
+				6F45EFBF1CF82E4E00DC84E7 /* YSPhotoCell.m in Sources */,
+				6F45EFC41CF82E5600DC84E7 /* YSDetailViewController.m in Sources */,
 				6FFE44A41CE5A5DE00B61141 /* YSCoreDataStack.m in Sources */,
 				6FFE44961CE5A13200B61141 /* Diary.xcdatamodeld in Sources */,
 			);

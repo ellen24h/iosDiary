@@ -9,7 +9,10 @@
 #import "YSEntryViewController.h"
 #import "YSCoreDataStack.h"
 #import "YSDiaryEntry.h"
+#import "AppDelegate.h"
+#import "YSPhotosViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import <SimpleAuth/SimpleAuth.h>
 
 
 @interface YSEntryViewController () <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
@@ -136,21 +139,27 @@
     [coreDataStack saveContext];
 
 }
+
+
 -(void)promptForSource {
-    UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:@"Image Source" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:Nil otherButtonTitles: @"Camera",@"Photo Roll", nil];
+    UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:@"Image Source" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:Nil otherButtonTitles: @"Camera",@"Photo Roll", @"Instagram", nil];
+    
     [actionSheet showInView:self.view];
     
 
 }
 
 //image
-
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
     if(buttonIndex != actionSheet.cancelButtonIndex){
-        if (buttonIndex !=actionSheet.firstOtherButtonIndex) {
+        if ([buttonTitle isEqualToString:@"Camera"]) {  //buttonIndex !=actionSheet.firstOtherButtonIndex
             [self promptForCamera];
-        }else{
+        }else if([buttonTitle isEqualToString:@"Photo Roll"]){ //수정해야함
             [self promptForPhotoRoll];
+        }else if([buttonTitle isEqualToString:@"Instagram"]){
+            [self promptForInstagram];
         }
     }
 }
@@ -171,6 +180,25 @@
     [self presentViewController:controller animated:YES completion:nil];
  
 }
+
+
+//instagram
+-(void)promptForInstagram{
+    NSLog(@"call photosViewController");
+    
+
+    YSPhotosViewController *photosViewController = [[YSPhotosViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:photosViewController];
+    
+    UINavigationBar *navigationBar = navigationController.navigationBar;
+    navigationBar.barTintColor =[UIColor colorWithRed:238.0/255.0 green:63.0/255.0 blue:53.0/255.0 alpha:1.0f];
+    navigationBar.barStyle = UIBarStyleBlackOpaque;
+
+   [self.navigationController pushViewController:photosViewController animated:YES];
+
+}
+
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     
     UIImage *image = info[UIImagePickerControllerOriginalImage];

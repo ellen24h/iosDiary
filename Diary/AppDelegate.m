@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "YSPhotosViewController.h"
+#import <SimpleAuth/SimpleAuth.h>
 
 @interface AppDelegate ()
 
@@ -22,6 +24,27 @@
     [self.window makeKeyAndVisible];
     _window.backgroundColor = [UIColor whiteColor];
 //    self.backgroundColor = [UIColor clearColor];
+    
+    
+//    //instagram
+    SimpleAuth.configuration[@"instagram"] = @{@"client_id" : @"your id",SimpleAuthRedirectURIKey : @"photobombers://auth/instagram"};
+//
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//
+//    YSPhotosViewController *photosViewController = [[YSPhotosViewController alloc] init];
+//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:photosViewController];
+//    
+//    UINavigationBar *navigationBar = navigationController.navigationBar;
+//    navigationBar.barTintColor =[UIColor colorWithRed:238.0/255.0 green:63.0/255.0 blue:53.0/255.0 alpha:1.0f];
+//    
+//    
+//    navigationBar.barStyle = UIBarStyleBlackOpaque;
+//    
+//    self.window.rootViewController = navigationController;
+//
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
+    
     
     return YES;
 }

@@ -82,3 +82,22 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/CMDQueryStringSerialization.framework"
+  install_framework "Pods/Calendar_iOS.framework"
+  install_framework "Pods/ISO8601.framework"
+  install_framework "Pods/ReactiveCocoa.framework"
+  install_framework "Pods/Result.framework"
+  install_framework "Pods/SAMCache.framework"
+  install_framework "Pods/SimpleAuth.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/CMDQueryStringSerialization.framework"
+  install_framework "Pods/Calendar_iOS.framework"
+  install_framework "Pods/ISO8601.framework"
+  install_framework "Pods/ReactiveCocoa.framework"
+  install_framework "Pods/Result.framework"
+  install_framework "Pods/SAMCache.framework"
+  install_framework "Pods/SimpleAuth.framework"
+fi

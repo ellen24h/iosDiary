@@ -71,7 +71,7 @@
         CGFloat height = CGRectGetHeight(self.mainImgView.bounds);
 
         self.mainImgView.image = [UIImage imageNamed:@"icon_noImage"];
-//        self.mainImgView.bounds = CGRectMake(width/2 + 30, height/2 +30, 60, 60);
+        self.mainImgView.bounds = CGRectMake(width/2 + 30, height/2 +30, 60, 60);
     }
     
     //Weather

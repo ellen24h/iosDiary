@@ -1,1 +1,4 @@
 pod 'Calendar-iOS'
+pod 'SimpleAuth/Instagram'
+pod 'SAMCache'
+use_frameworks!
