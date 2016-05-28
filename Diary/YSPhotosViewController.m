@@ -156,15 +156,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
-//
-//- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-//    return [[YSPresentDetailTransition alloc] init];
-//}
 
-
-//- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-//    return [[YSPresentDetailTransition alloc] init];
-//}
 
 
 

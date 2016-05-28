@@ -10,19 +10,14 @@
 #import "YSDiaryEntry.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface YSTableViewCell (){
-
-//    NSString *todayTxt;
-}
-
+@interface YSTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *mainImgView;
 @property (weak, nonatomic) IBOutlet UIImageView *moodImgView;
 
-//
+
 
 @end
 
@@ -49,11 +44,6 @@
 -(void) configureCellForEntry:(YSDiaryEntry *)entry{
 
     self.bodyLabel.text = entry.body;
-    
-//    YSTableViewCell * t = [[YSTableViewCell alloc]init];
-//    t.todayTxt = entry.body;
-//        todayTxt = @"hihi";
-//    NSLog(@" _todayTxt : %@", t.todayTxt);
     
 
     
@@ -85,7 +75,6 @@
         self.moodImgView.image = [UIImage imageNamed:@"snowrain_black"];
     }
     
-
     
 //    self.mainImgView.layer.cornerRadius = CGRectGetWidth(self.mainImgView.frame) / 2.0f;
     
@@ -94,17 +83,6 @@
 
 
 
-
-//- (void)awakeFromNib {
-//    // Initialization code
-//}
-//
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-//    [super setSelected:selected animated:animated];
-//
-//    // Configure the view for the selected state
-//}
-//
 
 
 @end

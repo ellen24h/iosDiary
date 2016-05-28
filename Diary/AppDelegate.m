@@ -28,23 +28,7 @@
     
 //    //instagram
     SimpleAuth.configuration[@"instagram"] = @{@"client_id" : @"1ee1ba19d1264116b419c85b6920c83c",SimpleAuthRedirectURIKey : @"photobombers://auth/instagram"};
-//
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//
-//    YSPhotosViewController *photosViewController = [[YSPhotosViewController alloc] init];
-//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:photosViewController];
-//    
-//    UINavigationBar *navigationBar = navigationController.navigationBar;
-//    navigationBar.barTintColor =[UIColor colorWithRed:238.0/255.0 green:63.0/255.0 blue:53.0/255.0 alpha:1.0f];
-//    
-//    
-//    navigationBar.barStyle = UIBarStyleBlackOpaque;
-//    
-//    self.window.rootViewController = navigationController;
-//
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    [self.window makeKeyAndVisible];
-    
+
     
     return YES;
 }
@@ -54,12 +38,6 @@
     
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     navigationBarAppearance.barTintColor =[UIColor colorWithRed:244.0/255.0 green:88.0/255.0 blue:68.0/255.0 alpha:1.0f];
-    
-    
-//    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
-//    navigationBarAppearance.barTintColor =[UIColor colorWithRed:231.0/255.0 green:161.0/255.0 blue:176.0/255.0 alpha:1.0f];
-    
-//    navigationBarAppearance.barTintColor =[UIColor colorWithRed:181.0/255.0 green:226.0/255.0 blue:217.0/255.0 alpha:1.0f];
     
     
     navigationBarAppearance.tintColor =[UIColor whiteColor];

@@ -20,6 +20,7 @@
 @property (nonatomic) UITapGestureRecognizer *tapRecognizer;
 @property (nonatomic, readonly, strong) IBOutlet UIButton *imgButton;
 @property (nonatomic) NSDictionary *photo;
+
 - (void)textViewDidBeginEditing:(UITextView *)textView;
 
 

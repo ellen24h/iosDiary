@@ -12,7 +12,7 @@
 
 @interface YSTableViewCell : UITableViewCell{
     
-//        NSString *todayTxt;
+
 
 
 }

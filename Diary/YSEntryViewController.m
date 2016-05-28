@@ -25,9 +25,9 @@
 @property (nonatomic,strong) UIImage *pickedImage;
 @property (nonatomic) UIImageView *imageView;
 
-@property (weak, nonatomic) IBOutlet UIButton *goodButton;
-@property (weak, nonatomic) IBOutlet UIButton *averageButton;
-@property (weak, nonatomic) IBOutlet UIButton *badButton;
+@property (weak, nonatomic) IBOutlet UIButton *sunnyButton;
+@property (weak, nonatomic) IBOutlet UIButton *cloudyButton;
+@property (weak, nonatomic) IBOutlet UIButton *rainyAndSnowyButton;
 @property (strong, nonatomic) IBOutlet UIView *accessoryView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
@@ -38,17 +38,8 @@
 @end
 
 
-//extern NS_ENUM(int16_t, YSDiaryEntryWeather){
-//    YSDiaryEntryWeatherSunny = 0,
-//    YSDiaryEntryWeatherRainy = 1,
-//    YSDiaryEntryWeatherWindy = 2
-//    
-//};
-
-
 @implementation YSEntryViewController
 //@synthesize imageButton;
-//@synthesize txtDetail;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -227,20 +218,20 @@
 -(void)setPickedWeather:(enum YSDiaryEntryWeather)pickedWeather {
     
     _pickedWeather = pickedWeather;
-    self.goodButton.alpha = 0.3f;
-    self.averageButton.alpha = 0.3f;
-    self.badButton.alpha = 0.3f;
+    self.sunnyButton.alpha = 0.3f;
+    self.cloudyButton.alpha = 0.3f;
+    self.rainyAndSnowyButton.alpha = 0.3f;
 
     switch (pickedWeather) {
         case YSDiaryEntryWeatherSunny:
-            self.goodButton.alpha = 2.0f;
+            self.sunnyButton.alpha = 2.0f;
             break;
         case YSDiaryEntryWeatherWindy:
-            self.averageButton.alpha = 2.0f;
+            self.cloudyButton.alpha = 2.0f;
             break;
             
         case YSDiaryEntryWeatherRainyAndSnowy:
-            self.badButton.alpha = 2.0f;
+            self.rainyAndSnowyButton.alpha = 2.0f;
             break;
     }
 
@@ -276,16 +267,16 @@
 }
 
 
-- (IBAction)goodButton:(id)sender {
+- (IBAction)sunnyButton:(id)sender {
     self.pickedWeather = YSDiaryEntryWeatherSunny;
     
 }
 
-- (IBAction)averageButton:(id)sender {
+- (IBAction)cloudyButton:(id)sender {
     self.pickedWeather = YSDiaryEntryWeatherWindy;
 }
 
-- (IBAction)badButton:(id)sender {
+- (IBAction)rainyAndSnowyButton:(id)sender {
     self.pickedWeather = YSDiaryEntryWeatherRainyAndSnowy;
 }
 

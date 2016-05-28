@@ -21,7 +21,6 @@
     NSURL *url = [[NSURL alloc]initWithString:_photo[@"images"][@"thumbnail"][@"url"]]; //[@"standard_resolution"]
     
 //    [self downloadPhotoWithURL:url];
-    
 //    NSLog(@"setPhoto url = %@",url); //all thumbnail images
     
 }
@@ -32,10 +31,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.imageView = [[UIImageView alloc] init];
-        
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(like)];
-        tap.numberOfTapsRequired = 2;
-        [self addGestureRecognizer:tap];
         
         [self.contentView addSubview:self.imageView];
         

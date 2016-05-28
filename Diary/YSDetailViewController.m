@@ -10,13 +10,8 @@
 
 #import "YSPhotoController.h"
 #import "YSEntryViewController.h"
-#import "YSDiaryEntry.h"
-#import "YSCoreDataStack.h"
-#import "YSEntryViewController.h"
 #import "YSPhotosViewController.h"
-
 #import "YSPhotoCell.h"
-#import "YSPhotoController.h"
 #import <SAMCache/SAMCache.h>
 
 @interface YSDetailViewController ()
@@ -77,59 +72,19 @@
 
 //save button
 - (void)PressedSave {
-
-        UIImage *img = [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"icn_happy." ofType:@"png"]];
     
-        YSEntryViewController *entryView = [[YSEntryViewController alloc]init];
+    YSEntryViewController *entryView = [[YSEntryViewController alloc]init];
+    [entryView.imgButton setTitle:@"Show View" forState:UIControlStateNormal];
     
     
-//        [entryView.imgButton setImage:[UIImage imageNamed:@"icn_happy"] forState:UIControlStateNormal];
-//        
-        [entryView.imgButton setImage:img forState:UIControlStateNormal];
+//    YSEntryViewController *addController = [[YSEntryViewController alloc] init ];
+////    addController.delegate = self;
+//    YSDetailViewController *PhotosViewController = [[UINavigationController alloc] initWithRootViewController:addController];
+//    [self presentViewController:PhotosViewController animated:YES completion: nil];
+//    
     
     [self dismissSelf];
 }
-
-//- (void) setImageView:(UIImageView *)pickedImage{
-//
-//    UIImage *img = [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"icn_happy." ofType:@"png"]];
-//    
-//    YSEntryViewController *entryView = [[YSEntryViewController alloc]init];
-//    
-//    //    entryView.imgButton =     self.pickedImage;
-////    entryView.imgButton =img;
-//    
-//    [entryView.imgButton setImage:[UIImage imageNamed:@"icn_happy.png"] forState:UIControlStateSelected];
-//    
-//    
-//}
-
-
-
-//- (void)setPickedImage:(UIImage *)pickedImage {
-//    _pickedImage = pickedImage;
-//    
-//    if (pickedImage == nil) {
-//        YSEntryViewController *entryView = [[YSEntryViewController alloc]init];
-//
-//        [entryView.image]
-////        [self.imageButton setImage:[UIImage imageNamed:@"icn_happy.png"] forState:UIControlStateNormal];
-//    } else {
-//        [self.imageButton setImage:pickedImage forState:UIControlStateNormal];
-//    }
-//}
-
-
-
-//- (void)updateDairyEntry {
-//    
-//    self.entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.75);
-//    
-//    YSCoreDataStack *coreDataStack =[YSCoreDataStack defaultStack];
-//    [coreDataStack saveContext];
-//    
-//}
-
 
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -154,21 +109,6 @@
     self.imageView.frame = CGRectMake(0.0, (size.height - imageSize.height) / 2.0, imageSize.width, imageSize.height);
 }
 
-//insert to Coredata
-- (void) saveImage {
-
-    [self close];
-    
-
-}
-
-
-- (void)close {
-
-    [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"selct close mehod" );
-
-}
 
 
 - (void)dismissSelf {

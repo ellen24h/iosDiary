@@ -52,11 +52,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="accessoryView" destination="iom-SK-6N0" id="glg-Mb-YoV"/>
-                        <outlet property="averageButton" destination="x8l-9Z-Xbv" id="blS-yS-GED"/>
-                        <outlet property="badButton" destination="IVN-tR-sjE" id="wrG-ig-nZm"/>
+                        <outlet property="cloudyButton" destination="x8l-9Z-Xbv" id="umG-9f-bJ2"/>
                         <outlet property="dateLabel" destination="rzc-h8-OtA" id="Mds-mk-VKU"/>
-                        <outlet property="goodButton" destination="Gca-TY-dbm" id="zLz-c6-YuB"/>
                         <outlet property="imgButton" destination="OPT-DN-72L" id="OZ7-RL-KTt"/>
+                        <outlet property="rainyAndSnowyButton" destination="IVN-tR-sjE" id="tRl-Nb-eZ6"/>
+                        <outlet property="sunnyButton" destination="Gca-TY-dbm" id="jsd-Y6-msM"/>
                         <outlet property="textView" destination="y2h-TS-RfC" id="Ddw-xP-Zj4"/>
                     </connections>
                 </viewController>
@@ -65,20 +65,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x8l-9Z-Xbv">
-                            <rect key="frame" x="125" y="0.0" width="125" height="53"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <inset key="contentEdgeInsets" minX="7" minY="2" maxX="-7" maxY="7"/>
-                            <inset key="imageEdgeInsets" minX="-13" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" image="cloudy_black.png">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="averageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n7q-XI-Jdc"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Gca-TY-dbm">
-                            <rect key="frame" x="0.0" y="0.0" width="125" height="52"/>
+                            <rect key="frame" x="0.0" y="-1" width="125" height="52"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="contentEdgeInsets" minX="3" minY="2" maxX="-9" maxY="5"/>
                             <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -86,7 +74,7 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="goodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="87U-Ge-Cza"/>
+                                <action selector="sunnyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="31j-t8-vTz"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IVN-tR-sjE">
@@ -100,7 +88,19 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="badButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gR-vc-oXl"/>
+                                <action selector="rainyAndSnowyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lyw-6L-ZhJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x8l-9Z-Xbv">
+                            <rect key="frame" x="125" y="0.0" width="125" height="53"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <inset key="contentEdgeInsets" minX="7" minY="2" maxX="-7" maxY="7"/>
+                            <inset key="imageEdgeInsets" minX="-13" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" image="cloudy_black.png">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cloudyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ldg-eL-OUa"/>
                             </connections>
                         </button>
                     </subviews>
