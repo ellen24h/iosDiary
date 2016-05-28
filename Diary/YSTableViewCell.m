@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *mainImgView;
-@property (weak, nonatomic) IBOutlet UIImageView *moodImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherImgView;
 
 
 
@@ -66,13 +66,13 @@
     
     //Weather
     if(entry.mood == YSDiaryEntryWeatherSunny){
-        self.moodImgView.image = [UIImage imageNamed:@"sunny_black"];
+        self.weatherImgView.image = [UIImage imageNamed:@"sunny_black"];
         
     }else if(entry.mood == YSDiaryEntryWeatherWindy){
-        self.moodImgView.image = [UIImage imageNamed:@"cloudy_black"];
+        self.weatherImgView.image = [UIImage imageNamed:@"cloudy_black"];
         
     }else if(entry.mood == YSDiaryEntryWeatherRainyAndSnowy){
-        self.moodImgView.image = [UIImage imageNamed:@"snowrain_black"];
+        self.weatherImgView.image = [UIImage imageNamed:@"snowrain_black"];
     }
     
     
@@ -80,9 +80,5 @@
     
 
 }
-
-
-
-
 
 @end

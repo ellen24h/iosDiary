@@ -8,19 +8,11 @@
         <!--Entry View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="YSEntryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YSEntryViewController" id="BYZ-38-t0r" customClass="YSEntryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OPT-DN-72L">
-                                <rect key="frame" x="107" y="121" width="163" height="163"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="icon_noImage"/>
-                                <connections>
-                                    <action selector="imgButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fb-ai-rbE"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rzc-h8-OtA">
                                 <rect key="frame" x="20" y="76" width="244" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -28,13 +20,28 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="y2h-TS-RfC">
-                                <rect key="frame" x="25" y="304" width="330" height="122"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OPT-DN-72L">
+                                <rect key="frame" x="6" y="121" width="163" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon_noImage"/>
+                                <connections>
+                                    <action selector="imgButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fb-ai-rbE"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="y2h-TS-RfC">
+                                <rect key="frame" x="192" y="121" width="163" height="163"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sq3-19-6bd">
+                                <rect key="frame" x="201" y="121" width="118" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -55,6 +62,7 @@
                         <outlet property="cloudyButton" destination="x8l-9Z-Xbv" id="umG-9f-bJ2"/>
                         <outlet property="dateLabel" destination="rzc-h8-OtA" id="Mds-mk-VKU"/>
                         <outlet property="imgButton" destination="OPT-DN-72L" id="OZ7-RL-KTt"/>
+                        <outlet property="placeHolderText" destination="Sq3-19-6bd" id="1uG-tn-ND0"/>
                         <outlet property="rainyAndSnowyButton" destination="IVN-tR-sjE" id="tRl-Nb-eZ6"/>
                         <outlet property="sunnyButton" destination="Gca-TY-dbm" id="jsd-Y6-msM"/>
                         <outlet property="textView" destination="y2h-TS-RfC" id="Ddw-xP-Zj4"/>
@@ -126,7 +134,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="553" id="FIr-s9-LDl" customClass="YSTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="553"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FIr-s9-LDl" id="nnP-Ig-k9Q">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="552"/>
@@ -152,7 +160,7 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6oV-Eo-TO2">
                                             <rect key="frame" x="8" y="47" width="359" height="345"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -160,7 +168,7 @@
                                     <outlet property="bodyLabel" destination="Gsw-II-Flb" id="sIg-QS-9iN"/>
                                     <outlet property="dateLabel" destination="LMb-00-0gr" id="FYs-r2-n9c"/>
                                     <outlet property="mainImgView" destination="6oV-Eo-TO2" id="ovh-74-cJd"/>
-                                    <outlet property="moodImgView" destination="gIi-95-XWd" id="ciG-Mq-NSP"/>
+                                    <outlet property="weatherImgView" destination="gIi-95-XWd" id="MwC-yM-jDK"/>
                                     <segue destination="j9Q-ee-FAp" kind="modal" identifier="Edit" id="TUo-bz-8jv"/>
                                 </connections>
                             </tableViewCell>
@@ -221,7 +229,7 @@
         <!--Navigation Controller-->
         <scene sceneID="bgY-Iv-D1J">
             <objects>
-                <navigationController id="y40-hv-y12" customClass="YSNavigationController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController1" id="y40-hv-y12" customClass="YSNavigationController" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R8B-uD-gpm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -238,7 +246,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ccs-8s-oGX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j9Q-ee-FAp" customClass="YSNavigationController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController2" automaticallyAdjustsScrollViewInsets="NO" id="j9Q-ee-FAp" customClass="YSNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VLx-We-9bJ">

@@ -13,17 +13,19 @@
 #import "YSPhotosViewController.h"
 #import "YSPhotoController.h"
 #import "YSDetailViewController.h"
-
+#import "YSNavigationController.h"
 #import <SimpleAuth/SimpleAuth.h>
+#import <UIKit/UIKit.h>
 
-
-@interface YSEntryViewController () <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface YSEntryViewController () <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate>
 
 
 //YSDiaryEntryWeather
 @property (nonatomic, assign) enum YSDiaryEntryWeather pickedWeather;
 @property (nonatomic,strong) UIImage *pickedImage;
 @property (nonatomic) UIImageView *imageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *placeHolderText;
 
 @property (weak, nonatomic) IBOutlet UIButton *sunnyButton;
 @property (weak, nonatomic) IBOutlet UIButton *cloudyButton;
@@ -74,32 +76,43 @@
     }
 
 
-    _textView.delegate = self;
+
+    [_textView setDelegate:self];
+//    _textView.insertDictationResultPlaceholder = @"Comment";
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"MMM dd일 (EEEE) "];
     self.dateLabel.text = [dateFormatter stringFromDate:date];
     self.textView.inputAccessoryView = self.accessoryView; //up of the keybord
-    self.imgButton.layer.cornerRadius = CGRectGetWidth(self.imgButton.frame) / 10.0f;
+//    self.imgButton.layer.cornerRadius = CGRectGetWidth(self.imgButton.frame) / 10.0f;
+    
+    
+    
 }
+
+
+
+- (void)textViewDidChange:(UITextView *)textView {
+
+    if ([textView.text length] > 0) {
+        [textView setBackgroundColor:[UIColor whiteColor]];
+        [_placeHolderText setHidden:YES];
+        [textView becomeFirstResponder];
+
+    }else if ([textView.text isEqualToString:@"Comment"]) {
+        [textView setBackgroundColor:[UIColor clearColor]];
+        [_placeHolderText setHidden:NO];
+
+        
+    }
+}
+
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.textView becomeFirstResponder];
 
-}
-
-
-
-- (void)textViewDidBeginEditing:(UITextView *)textView {
-//        self.txtDetail.text = [self.textView.text stringByAppendingString:@"Hello!"];
-//    
-    NSLog(@"Hello");
-//    if ([textView.text isEqualToString:@"Enter text here"]){
-//        textView.text = @"??";
-//        
-//    }
 }
 
 
@@ -125,7 +138,7 @@
 }
 
 - (void)updateDairyEntry {
-    
+
     self.entry.body = self.textView.text;
     self.entry.mood = self.pickedWeather;
     self.entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.75);
@@ -253,13 +266,21 @@
     
     if (self.entry != nil) {
         [self updateDairyEntry];
-        
+         NSLog(@"DonePressed update");
     }else {
         [self insertDiaryEntry];
+        NSLog(@"DonePressed insert");
+
     }
     
-    [self dismissSelf];
+//    [self dismissSelf];
 
+        UIStoryboard *storyboard2 = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        YSNavigationController *viewController = (YSNavigationController *)[storyboard2 instantiateViewControllerWithIdentifier:@"NavigationController1"];
+    [self presentViewController:viewController animated:YES completion:nil];
+    
+//     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
 
 }
 - (IBAction)cancelPressed:(id)sender {
