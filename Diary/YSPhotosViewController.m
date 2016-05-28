@@ -24,12 +24,17 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (instancetype)init {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(106.0, 106.0);
-    layout.minimumInteritemSpacing = 1.0;
-    layout.minimumLineSpacing = 1.0;
-    
+    layout.itemSize = CGSizeMake(124, 124); //106.0
+
+    layout.minimumInteritemSpacing = 0.3; //1.0
+    layout.minimumLineSpacing = 0.3; //1.0
+
+
     return (self = [super initWithCollectionViewLayout:layout]);
 }
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,7 +68,7 @@ static NSString * const reuseIdentifier = @"Cell";
     NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.instagram.com/v1/users/self/media/recent/?access_token=%@", self.accessToken];
 
     
-    NSLog(@"urlString: %@", urlString);
+//    NSLog(@"urlString: %@", urlString);
     
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
@@ -80,13 +85,15 @@ static NSString * const reuseIdentifier = @"Cell";
             [self.collectionView reloadData];
         });
         
-        //        //whole json
-        //        NSLog(@"responseDictionary: %@", responseDictionary);
-        //
-        //
-        //        NSString *text = [[NSString alloc] initWithContentsOfURL:location encoding:NSUTF8StringEncoding error:nil];
-        //        NSLog(@"text: %@", text);
-        //        //NSLog(@"response: %@", response);
+//        //        //whole json
+//                NSLog(@"responseDictionary: %@", responseDictionary);
+//        //
+//        //
+//                NSString *text = [[NSString alloc] initWithContentsOfURL:location encoding:NSUTF8StringEncoding error:nil];
+//                NSLog(@"text: %@", text);
+//
+//        
+//                NSLog(@"response: %@", response);
     }];
     [task resume];
     

@@ -8,6 +8,7 @@
 
 #import "YSPhotoCell.h"
 #import "YSPhotoController.h"
+#import <SAMCache/SAMCache.h>
 
 @implementation YSPhotoCell
 
@@ -17,9 +18,12 @@
     [YSPhotoController imageForPhoto:_photo size:@"thumbnail" completion:^(UIImage *image) {
         self.imageView.image = image;
     }];
-    //NSURL *url = [[NSURL alloc]initWithString:_photo[@"images"][@"thumbnail"][@"url"]]; //[@"standard_resolution"]
+    NSURL *url = [[NSURL alloc]initWithString:_photo[@"images"][@"thumbnail"][@"url"]]; //[@"standard_resolution"]
     
-    //[self downloadPhotoWithURL:url];
+//    [self downloadPhotoWithURL:url];
+    
+//    NSLog(@"setPhoto url = %@",url); //all thumbnail images
+    
 }
 
 
@@ -28,7 +32,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.imageView = [[UIImageView alloc] init];
-        //        self.imageView.image = [UIImage imageNamed:@"no image"];
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(like)];
         tap.numberOfTapsRequired = 2;
@@ -45,7 +48,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.imageView.frame = self.contentView.bounds;
+    self.imageView.frame = self.contentView.bounds; //add all thumnails
+    
 }
 
 ////instagram download + cache
@@ -57,7 +61,6 @@
 //    if (photo){
 //        self.imageView.image = photo;
 //        return;
-//
 //    }
 //
 //    NSURLSession *session = [NSURLSession sharedSession];
@@ -74,43 +77,6 @@
 //    }];
 //    [task resume];
 //}
-
--(void)like{
-    
-    NSLog(@"Link : %@", self.photo[@"link"]);
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSString *accessToken = [[NSUserDefaults standardUserDefaults]objectForKey:@"accessToken"];
-    NSString *urlString = [[NSString alloc]initWithFormat:@"http://api.instagram.com/v1/media/%@/likes?access_token=%@", self.photo[@"id"], accessToken];
-    
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url];
-    request.HTTPMethod =@"POST";
-    
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
-        
-        //        NSLog(@"response : %@", response);
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self showLikeCompletion];
-        });
-    }];
-    [task resume];
-    
-}
-
-
--(void) showLikeCompletion{
-    
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Liked!" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
-    [alert show];
-    
-    double delayInseconds = 1.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInseconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [alert dismissWithClickedButtonIndex:0 animated:YES];
-        
-    });
-}
 
 
 

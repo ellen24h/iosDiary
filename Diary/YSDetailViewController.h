@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class YSDiaryEntry;
+@class YSEntryViewController;
+
 @interface YSDetailViewController : UIViewController
 
 @property (nonatomic) NSDictionary *photo;
+@property(nonatomic, strong) YSDiaryEntry *entry;
 
 
 @end

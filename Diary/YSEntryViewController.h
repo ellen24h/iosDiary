@@ -12,14 +12,14 @@
 
 @interface YSEntryViewController : UIViewController <UITextFieldDelegate>{
 
-UITextView *txtDetail;
-    
+    @public IBOutlet UIButton *imgButton;
     
 }
 
 @property(nonatomic, strong) YSDiaryEntry *entry;
 @property (nonatomic) UITapGestureRecognizer *tapRecognizer;
-@property (nonatomic, retain) IBOutlet UITextView *txtDetail;
+@property (nonatomic, readonly, strong) IBOutlet UIButton *imgButton;
+@property (nonatomic) NSDictionary *photo;
 - (void)textViewDidBeginEditing:(UITextView *)textView;
 
 

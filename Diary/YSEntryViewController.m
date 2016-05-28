@@ -11,6 +11,9 @@
 #import "YSDiaryEntry.h"
 #import "AppDelegate.h"
 #import "YSPhotosViewController.h"
+#import "YSPhotoController.h"
+#import "YSDetailViewController.h"
+
 #import <SimpleAuth/SimpleAuth.h>
 
 
@@ -19,8 +22,8 @@
 
 //YSDiaryEntryWeather
 @property (nonatomic, assign) enum YSDiaryEntryWeather pickedWeather;
-
 @property (nonatomic,strong) UIImage *pickedImage;
+@property (nonatomic) UIImageView *imageView;
 
 @property (weak, nonatomic) IBOutlet UIButton *goodButton;
 @property (weak, nonatomic) IBOutlet UIButton *averageButton;
@@ -28,7 +31,9 @@
 @property (strong, nonatomic) IBOutlet UIView *accessoryView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (weak, nonatomic) IBOutlet UIButton *imgButton;
+@property (nonatomic, readwrite, strong) IBOutlet UIButton *imgButton;
+
+
 
 @end
 
@@ -42,8 +47,8 @@
 
 
 @implementation YSEntryViewController
-
-@synthesize txtDetail;
+//@synthesize imageButton;
+//@synthesize txtDetail;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -122,7 +127,7 @@
     
     entry.body = self.textView.text;
     entry.date = [[NSDate date] timeIntervalSince1970];
-    entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 1);  //0.75
+    entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.75);  //0.75
     entry.mood = self.pickedWeather; //not self.entry.mood
     
     [coreDataStack saveContext];
@@ -144,8 +149,6 @@
     UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:@"Image Source" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:Nil otherButtonTitles: @"Camera",@"Photo Roll", @"Instagram", nil];
     
     [actionSheet showInView:self.view];
-    
-
 }
 
 //image
@@ -155,7 +158,7 @@
     if(buttonIndex != actionSheet.cancelButtonIndex){
         if ([buttonTitle isEqualToString:@"Camera"]) {  //buttonIndex !=actionSheet.firstOtherButtonIndex
             [self promptForCamera];
-        }else if([buttonTitle isEqualToString:@"Photo Roll"]){ //수정해야함
+        }else if([buttonTitle isEqualToString:@"Photo Roll"]){
             [self promptForPhotoRoll];
         }else if([buttonTitle isEqualToString:@"Instagram"]){
             [self promptForInstagram];
@@ -171,7 +174,7 @@
     [self presentViewController:controller animated:YES completion:nil];
     
 }
-
+//Ablum
 -(void)promptForPhotoRoll{
     UIImagePickerController *controller = [[UIImagePickerController alloc ]init];
     controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -190,9 +193,11 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:photosViewController];
     
     UINavigationBar *navigationBar = navigationController.navigationBar;
-    navigationBar.barTintColor =[UIColor colorWithRed:238.0/255.0 green:63.0/255.0 blue:53.0/255.0 alpha:1.0f];
+//    navigationBar.barTintColor =[UIColor colorWithRed:238.0/255.0 green:63.0/255.0 blue:53.0/255.0 alpha:1.0f];
     navigationBar.barStyle = UIBarStyleBlackOpaque;
 
+
+    
    [self.navigationController pushViewController:photosViewController animated:YES];
 
 }
@@ -288,8 +293,8 @@
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         [self promptForSource];
     }else {
-        [self promptForPhotoRoll];
-        
+//        [self promptForPhotoRoll];
+        [self promptForInstagram];
     }
 }
 
