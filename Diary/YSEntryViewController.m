@@ -81,16 +81,29 @@
     [_textView setDelegate:self];
 //    _textView.insertDictationResultPlaceholder = @"Comment";
     
+    if ([_textView.text length] > 0) {
+        [_textView setBackgroundColor:[UIColor whiteColor]];
+        [_placeHolderText setHidden:YES];
+        [_textView becomeFirstResponder];
+        
+    }else if ([_textView.text isEqualToString:@"Comment"]) {
+        [_textView setBackgroundColor:[UIColor clearColor]];
+        [_placeHolderText setHidden:NO];
+    }
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"MMM dd일 (EEEE) "];
     self.dateLabel.text = [dateFormatter stringFromDate:date];
     self.textView.inputAccessoryView = self.accessoryView; //up of the keybord
-//    self.imgButton.layer.cornerRadius = CGRectGetWidth(self.imgButton.frame) / 10.0f;
+    self.imgButton.layer.cornerRadius = CGRectGetWidth(self.imgButton.frame) / 10.0f;
     
     
     
 }
 
+- (void)textViewDidBeginEding:(UITextView *)textView {
+
+}
 
 
 - (void)textViewDidChange:(UITextView *)textView {

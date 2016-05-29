@@ -94,7 +94,7 @@
 
 //cancel button
 - (void)dismiss {
-    
+
     [self dismissSelf];
 }
 
@@ -113,11 +113,13 @@
         if (image !=nil) {
             [self insertDiaryEntry];
 //            self.imageView.image = _pickedImage;
-            [entryView.imgButton setImage:_pickedImage forState:UIControlStateNormal];
+//            [entryView.imgButton setImage:_pickedImage forState:UIControlStateNormal];
+            [entryView.imgButton setImage:[UIImage imageNamed:@"icn_happy"] forState:UIControlStateNormal];
+
             NSLog(@"image !=nil");
 
         }else {
-            [entryView.imgButton setImage:[UIImage imageNamed:@"icon_noImage"] forState:UIControlStateNormal];
+            [entryView.imgButton setImage:[UIImage imageNamed:@"icn_happy"] forState:UIControlStateNormal];
 
             NSLog(@"123123123123");
         }

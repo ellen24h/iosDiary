@@ -10,6 +10,7 @@
 #import "YSPhotoCell.h"
 #import "YSDetailViewController.h"
 #import <SimpleAuth/SimpleAuth.h>
+#import "YSEntryViewController.h"
 
 @interface YSPhotosViewController ()  <UIViewControllerTransitioningDelegate>
 
@@ -60,6 +61,9 @@ static NSString * const reuseIdentifier = @"Cell";
     } else {
         [self refresh];
     }
+    
+
+    
 }
 
 - (void) refresh {
@@ -97,7 +101,14 @@ static NSString * const reuseIdentifier = @"Cell";
     }];
     [task resume];
     
+    
+    
+    
 }
+
+
+
+
 
 //    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 //    self.accessToken = [userDefaults objectForKey:@"accessToken"];

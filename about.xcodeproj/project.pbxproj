@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		298FA1476EFAF02AC44C9529 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AEEE5490CFCAF255E7BA20 /* Pods.framework */; };
 		6F14DE871CF1A7A60023B170 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F14DE861CF1A7A60023B170 /* sample.png */; };
-		6F14DE891CF1A9BE0023B170 /* sample2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F14DE881CF1A9BE0023B170 /* sample2.png */; };
 		6F22636A1CEB5BF200660B71 /* YSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2263691CEB5BF200660B71 /* YSCalendarViewController.m */; };
 		6F32A2651CF43E460095B854 /* about_logo_rounded .png in Resources */ = {isa = PBXBuildFile; fileRef = 6F32A2641CF43E460095B854 /* about_logo_rounded .png */; };
 		6F32A26D1CF443570095B854 /* cloudy_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F32A2671CF443570095B854 /* cloudy_black.png */; };
@@ -27,14 +26,15 @@
 		6F44F5E51CE99B660042D408 /* about_87.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5CC1CE99B660042D408 /* about_87.png */; };
 		6F44F5EE1CE99B660042D408 /* icn_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5D51CE99B660042D408 /* icn_calendar.png */; };
 		6F44F5F31CE99B660042D408 /* icn_happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5DA1CE99B660042D408 /* icn_happy.png */; };
-		6F44F5F51CE99B660042D408 /* icn_picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5DC1CE99B660042D408 /* icn_picture@2x.png */; };
-		6F44F5F71CE99B660042D408 /* icn_write_post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5DE1CE99B660042D408 /* icn_write_post@2x.png */; };
 		6F44F5F81CE99B660042D408 /* icon_noImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F44F5DF1CE99B660042D408 /* icon_noImage@2x.png */; };
 		6F44F5FA1CE9CCFD0042D408 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F44F5F91CE9CCFD0042D408 /* QuartzCore.framework */; };
 		6F45EFBF1CF82E4E00DC84E7 /* YSPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F45EFBA1CF82E4E00DC84E7 /* YSPhotoCell.m */; };
 		6F45EFC01CF82E4E00DC84E7 /* YSPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F45EFBC1CF82E4E00DC84E7 /* YSPhotoController.m */; };
 		6F45EFC11CF82E4E00DC84E7 /* YSPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F45EFBE1CF82E4E00DC84E7 /* YSPhotosViewController.m */; };
 		6F45EFC41CF82E5600DC84E7 /* YSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F45EFC31CF82E5600DC84E7 /* YSDetailViewController.m */; };
+		6F4F57C31CFB4641007BABEF /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F57C21CFB4641007BABEF /* sample.jpg */; };
+		6F4F57C51CFB5447007BABEF /* icon_noImg 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F57C41CFB5447007BABEF /* icon_noImg 2.jpg */; };
+		6F4F57C91CFB5555007BABEF /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4F57C81CFB5555007BABEF /* noimage.png */; };
 		6F5268B81CE8C43B00EE4705 /* YSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5268B71CE8C43B00EE4705 /* YSNavigationController.m */; };
 		6F5268BB1CE8CA5C00EE4705 /* YSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5268BA1CE8CA5C00EE4705 /* YSTableViewCell.m */; };
 		6FA2E8A41CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2E8A11CE71B4B0007398C /* YSDiaryEntry+CoreDataProperties.m */; };
@@ -54,7 +54,6 @@
 /* Begin PBXFileReference section */
 		2822A903341E360C41AA8D0E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6F14DE861CF1A7A60023B170 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
-		6F14DE881CF1A9BE0023B170 /* sample2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample2.png; sourceTree = "<group>"; };
 		6F2263671CEB586100660B71 /* podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6F2263681CEB5BF200660B71 /* YSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarViewController.h; sourceTree = "<group>"; };
 		6F2263691CEB5BF200660B71 /* YSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarViewController.m; sourceTree = "<group>"; };
@@ -74,8 +73,6 @@
 		6F44F5CC1CE99B660042D408 /* about_87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_87.png; sourceTree = "<group>"; };
 		6F44F5D51CE99B660042D408 /* icn_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_calendar.png; sourceTree = "<group>"; };
 		6F44F5DA1CE99B660042D408 /* icn_happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_happy.png; sourceTree = "<group>"; };
-		6F44F5DC1CE99B660042D408 /* icn_picture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_picture@2x.png"; sourceTree = "<group>"; };
-		6F44F5DE1CE99B660042D408 /* icn_write_post@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_write_post@2x.png"; sourceTree = "<group>"; };
 		6F44F5DF1CE99B660042D408 /* icon_noImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_noImage@2x.png"; sourceTree = "<group>"; };
 		6F44F5F91CE9CCFD0042D408 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6F45EFB91CF82E4E00DC84E7 /* YSPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPhotoCell.h; sourceTree = "<group>"; };
@@ -86,6 +83,9 @@
 		6F45EFBE1CF82E4E00DC84E7 /* YSPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPhotosViewController.m; sourceTree = "<group>"; };
 		6F45EFC21CF82E5600DC84E7 /* YSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDetailViewController.h; sourceTree = "<group>"; };
 		6F45EFC31CF82E5600DC84E7 /* YSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDetailViewController.m; sourceTree = "<group>"; };
+		6F4F57C21CFB4641007BABEF /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+		6F4F57C41CFB5447007BABEF /* icon_noImg 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icon_noImg 2.jpg"; sourceTree = "<group>"; };
+		6F4F57C81CFB5555007BABEF /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
 		6F5268B61CE8C43B00EE4705 /* YSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSNavigationController.h; sourceTree = "<group>"; };
 		6F5268B71CE8C43B00EE4705 /* YSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSNavigationController.m; sourceTree = "<group>"; };
 		6F5268B91CE8CA5C00EE4705 /* YSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTableViewCell.h; sourceTree = "<group>"; };
@@ -152,11 +152,11 @@
 				6F44F5CA1CE99B660042D408 /* about_58.png */,
 				6F44F5CB1CE99B660042D408 /* about_80.png */,
 				6F44F5CC1CE99B660042D408 /* about_87.png */,
-				6F14DE881CF1A9BE0023B170 /* sample2.png */,
+				6F4F57C21CFB4641007BABEF /* sample.jpg */,
 				6F44F5D51CE99B660042D408 /* icn_calendar.png */,
+				6F4F57C41CFB5447007BABEF /* icon_noImg 2.jpg */,
 				6F44F5DA1CE99B660042D408 /* icn_happy.png */,
-				6F44F5DC1CE99B660042D408 /* icn_picture@2x.png */,
-				6F44F5DE1CE99B660042D408 /* icn_write_post@2x.png */,
+				6F4F57C81CFB5555007BABEF /* noimage.png */,
 				6F32A2641CF43E460095B854 /* about_logo_rounded .png */,
 				6F44F5DF1CE99B660042D408 /* icon_noImage@2x.png */,
 			);
@@ -329,17 +329,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FFE449B1CE5A13200B61141 /* LaunchScreen.storyboard in Resources */,
-				6F14DE891CF1A9BE0023B170 /* sample2.png in Resources */,
 				6F32A2761CF462190095B854 /* Images.xcassets in Resources */,
 				6F44F5E41CE99B660042D408 /* about_80.png in Resources */,
+				6F4F57C31CFB4641007BABEF /* sample.jpg in Resources */,
 				6F32A2651CF43E460095B854 /* about_logo_rounded .png in Resources */,
 				6F32A26E1CF443570095B854 /* cloudy_white.png in Resources */,
 				6F44F5E01CE99B660042D408 /* about_120-1.png in Resources */,
-				6F44F5F51CE99B660042D408 /* icn_picture@2x.png in Resources */,
 				6F32A26F1CF443570095B854 /* snowrain_black.png in Resources */,
-				6F44F5F71CE99B660042D408 /* icn_write_post@2x.png in Resources */,
 				6F32A2721CF443570095B854 /* sunny_white.png in Resources */,
 				6F32A26D1CF443570095B854 /* cloudy_black.png in Resources */,
+				6F4F57C91CFB5555007BABEF /* noimage.png in Resources */,
 				6FFE44981CE5A13200B61141 /* Assets.xcassets in Resources */,
 				6F32A2711CF443570095B854 /* sunny_black.png in Resources */,
 				6F44F5E31CE99B660042D408 /* about_58.png in Resources */,
@@ -348,6 +347,7 @@
 				6F32A2701CF443570095B854 /* snowrain_white.png in Resources */,
 				6F44F5E51CE99B660042D408 /* about_87.png in Resources */,
 				6F44F5F81CE99B660042D408 /* icon_noImage@2x.png in Resources */,
+				6F4F57C51CFB5447007BABEF /* icon_noImg 2.jpg in Resources */,
 				6F44F5F31CE99B660042D408 /* icn_happy.png in Resources */,
 				6FFE44931CE5A13200B61141 /* Main.storyboard in Resources */,
 				6F44F5EE1CE99B660042D408 /* icn_calendar.png in Resources */,

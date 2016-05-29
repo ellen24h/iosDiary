@@ -46,7 +46,7 @@
             NSLog(@" _todayTxt : %@",a);
     }else{
         
-        self.bodyLabel.text = @"오늘의 한 줄";
+        self.bodyLabel.text = @"";
 
     }
 }

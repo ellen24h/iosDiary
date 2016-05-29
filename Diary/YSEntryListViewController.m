@@ -135,7 +135,7 @@
     YSCoreDataStack *coreDataStack =[YSCoreDataStack defaultStack];
     [[coreDataStack managedObjectContext] deleteObject:entry];
     [coreDataStack saveContext];
-//
+
     
 }
 

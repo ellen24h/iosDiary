@@ -60,7 +60,18 @@
         CGFloat width = CGRectGetWidth(self.mainImgView.bounds);
         CGFloat height = CGRectGetHeight(self.mainImgView.bounds);
 
-        self.mainImgView.image = [UIImage imageNamed:@"icon_noImage"];
+        
+        UIImage * image = [UIImage imageNamed:@"noimage"];
+        CGSize sacleSize = CGSizeMake(40, 30);
+        UIGraphicsBeginImageContextWithOptions(sacleSize, NO, 0.0);
+        [image drawInRect:CGRectMake(0, 0, sacleSize.width, sacleSize.height)];
+        UIImage * resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        
+
+        self.mainImgView.image = resizedImage ;
+        self.mainImgView.contentMode = UIViewContentModeScaleAspectFit;
         self.mainImgView.bounds = CGRectMake(width/2 + 30, height/2 +30, 60, 60);
     }
     
