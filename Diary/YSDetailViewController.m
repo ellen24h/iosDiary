@@ -7,6 +7,8 @@
 //
 
 #import "YSDetailViewController.h"
+#import "YSCoreDataStack.h"
+#import "YSDiaryEntry.h"
 
 #import "YSPhotoController.h"
 #import "YSEntryViewController.h"
@@ -16,6 +18,7 @@
 #import "YSNavigationController.h"
 
 @interface YSDetailViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
 @property (nonatomic) UIImageView *imageView;
 @property (nonatomic,strong) UIImage *pickedImage; //entryview controller
 
@@ -23,8 +26,20 @@
 
 @implementation YSDetailViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setPickedImage:[UIImage imageWithData:self.entry.imageData]];
+
+    
     self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.95];
 
     //NavigationBar
@@ -84,59 +99,86 @@
 }
 
 
--(void)setPickedImage:(UIImage *)image{
-    _pickedImage = image;
-    
-    YSEntryViewController *entryView = [[YSEntryViewController alloc] init ];
-
-    if(image ==nil){
-        [entryView.imgButton setImage:[UIImage imageNamed:@"icon_noImage"] forState:UIControlStateNormal];
-    }else{
-        [entryView.imgButton setImage:image forState:UIControlStateNormal];
-    }
-}
-
-
 
 //save button
 - (void)PressedSave {
     
-    
-    
+    YSEntryViewController *entryView = [[YSEntryViewController alloc] init ];
+
     [YSPhotoController imageForPhoto:self.photo size:@"standard_resolution" completion:^(UIImage *image) {
         
-        YSEntryViewController *entryView = [[YSEntryViewController alloc] init ];
+         _pickedImage = image;
+
+        
         if (image !=nil) {
-        self.imageView.image = image;
-        [entryView.imgButton setImage:image forState:UIControlStateNormal];
+            [self insertDiaryEntry];
+//            self.imageView.image = _pickedImage;
+            [entryView.imgButton setImage:_pickedImage forState:UIControlStateNormal];
             NSLog(@"image !=nil");
 
-//            [entryView.imgButton setImage:[UIImage imageNamed:@"about_80.png"] forState:UIControlStateNormal];
         }else {
+            [entryView.imgButton setImage:[UIImage imageNamed:@"icon_noImage"] forState:UIControlStateNormal];
+
             NSLog(@"123123123123");
         }
     }];
     
-
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    YSNavigationController *viewController = (YSNavigationController *)[storyboard instantiateViewControllerWithIdentifier:@"NavigationController2"];
- 
-    viewController.delegate = self;
-    [self presentViewController:viewController animated:YES completion:nil];
     
+    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    YSNavigationController *viewController = (YSNavigationController *)[storyboard instantiateViewControllerWithIdentifier:@"NavigationController2"];
 
-//    YSDetailViewController *PhotosViewController = [[UINavigationController alloc] initWithRootViewController:addController];
-//    [self.navigationController pushViewController:entryView animated:YES];
-
+//    viewController.delegate = self;
+//    [self presentViewController:viewController animated:YES completion:nil];
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
+
+- (void)insertDiaryEntry {
+    YSCoreDataStack *coreDataStack = [YSCoreDataStack defaultStack];
+    YSDiaryEntry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"YSDiaryEntry" inManagedObjectContext:coreDataStack.managedObjectContext];
+ 
+    entry.date = [[NSDate date] timeIntervalSince1970];
+    entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.75);  //0.75
+    [coreDataStack saveContext];
+}
+
+//setImage to imgButton
+-(void)setPickedImage:(UIImage *)pickedImage{
+    _pickedImage = pickedImage;
+    
+    if(pickedImage != nil){
+     NSLog(@"pickedImage != nil");
+        
+    YSEntryViewController *entryView = [[YSEntryViewController alloc] init ];
+
+        if(pickedImage ==nil){
+            [entryView.imgButton setImage:[UIImage imageNamed:@"icon_noImage"] forState:UIControlStateNormal];
+            NSLog(@"pickedImage ==nil");
+        }else{
+//            [entryView.imgButton setImage:pickedImage forState:UIControlStateNormal];
+            [entryView.imgButton setImage:[UIImage imageNamed:@"icn_happy.png"] forState:UIControlStateNormal];
+             NSLog(@"pickedImage !=nil");
+        }
+    }
+    
+    NSLog(@"setPickedImage is calling");
+}
+
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    _pickedImage = image;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
 
 }
-
 
 
 - (void)viewDidLayoutSubviews {

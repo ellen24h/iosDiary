@@ -29,6 +29,9 @@
 //    //instagram
     SimpleAuth.configuration[@"instagram"] = @{@"client_id" : @"1ee1ba19d1264116b419c85b6920c83c",SimpleAuthRedirectURIKey : @"photobombers://auth/instagram"};
 
+//    self.window.rootViewController = nil;
+//    [self.window makeKeyAndVisible];
+    
     
     return YES;
 }

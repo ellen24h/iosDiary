@@ -63,7 +63,8 @@
     _tapRecognizer.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:_tapRecognizer];
     
-        NSDate *date;
+    
+    NSDate *date;
     
     
     if (self.entry != nil) {
@@ -138,7 +139,7 @@
 }
 
 - (void)updateDairyEntry {
-
+    
     self.entry.body = self.textView.text;
     self.entry.mood = self.pickedWeather;
     self.entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.75);
@@ -201,7 +202,7 @@
     navigationBar.barStyle = UIBarStyleBlackOpaque;
 
 
-    
+    //connect
    [self.navigationController pushViewController:photosViewController animated:YES];
 
 }
@@ -273,12 +274,12 @@
 
     }
     
-//    [self dismissSelf];
+    [self dismissSelf];
 
-        UIStoryboard *storyboard2 = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        YSNavigationController *viewController = (YSNavigationController *)[storyboard2 instantiateViewControllerWithIdentifier:@"NavigationController1"];
-    [self presentViewController:viewController animated:YES completion:nil];
-    
+//        UIStoryboard *storyboard2 = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        YSNavigationController *viewController = (YSNavigationController *)[storyboard2 instantiateViewControllerWithIdentifier:@"NavigationController1"];
+//    [self presentViewController:viewController animated:YES completion:nil];
+//    
 //     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
 
